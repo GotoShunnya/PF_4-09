@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def new
   end
 
@@ -11,5 +10,4 @@ class PostsController < ApplicationController
 
   def show
   end
-
 end
