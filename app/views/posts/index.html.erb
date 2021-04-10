@@ -4,14 +4,18 @@
   <table>
     <thead>
       <tr>
+        <th>投稿者</th>
         <th>Title</th>
         <th>Image</th>
+        <th>投稿日時</th>
       </tr>
     </thead>
     <tbody>
       <tr>
+        <td><%= posts.user.name %></td>
         <td><%= link_to posts.title, post_path(posts.id) %></td>
-        <td><%= attachment_image_tag posts, :image, format:"jpeg", size:"200x200" %>
+        <td><%= attachment_image_tag posts, :image, format:"jpeg", size:"200x200" %></td>
+        <td><%= posts.created_at %></td>
       </tr>
     </tbody>
   </table>
