@@ -1,0 +1,23 @@
+<h1>投稿詳細</h1>
+
+<table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @post.title %></td>
+        <td><%= @post.body %></td>
+        <td><%= attachment_image_tag @post, :image, format:"jpeg", size:"200x200" %></td>
+        <% if @post.user == current_user %>
+          <td><%= link_to "投稿を削除", post_path(@post), method: :delete %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= link_to "一覧に戻る", posts_path %>

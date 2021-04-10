@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get "users/withdraw"
   resources :users, only: [:show, :edit, :update]
 
-  resources :posts, only: [:new, :index, :create, :show]
+  resources :posts, only: [:new, :index, :create, :show, :destroy]
 end
