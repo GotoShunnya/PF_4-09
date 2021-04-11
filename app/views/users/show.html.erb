@@ -1,0 +1,26 @@
+<h1>マイページ</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>名前（ニックネーム）<%= current_user.name %></th>
+    </tr>
+    <tr>
+      <th>かな <%= current_user.name_kana %></th>
+    </tr>
+    <tr>
+      <th>自己紹介文 <%= current_user.introduction %></th>
+    </tr>
+    <tr>
+      <th>プロフィール写真 <%= current_user.profile_image_id %></th>
+    </tr>
+    <tr>
+      <th>メールアドレス <%= current_user.email %></th>
+    </tr>
+    <tr>
+      <th>電話番号 <%= current_user.phone_number %></th>
+    </tr>
+  </thead>
+</table>
+
+<%= link_to "編集する", edit_user_path(current_user) %>

@@ -10,5 +10,7 @@
   <h4>image</h4>
   <%= f.attachment_field :image %>
 
-  <%= f.submit "投稿する" %>
+  <p><%= f.submit "投稿する" %></p>
 <% end %>
+
+<%= link_to "投稿一覧に戻る", posts_path %>

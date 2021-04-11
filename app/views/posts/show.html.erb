@@ -1,23 +1,41 @@
 <h1>投稿詳細</h1>
 
 <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Body</th>
-        <th>Image</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= @post.title %></td>
-        <td><%= @post.body %></td>
-        <td><%= attachment_image_tag @post, :image, format:"jpeg", size:"200x200" %></td>
+   <thead>
+     <tr>
+       <th>Title</th>
+       <th>Body</th>
+       <th>Image</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td><%= @post.title %></td>
+       <td><%= @post.body %></td>
+       <td><%= attachment_image_tag @post, :image, format:"jpeg", size:"200x200" %></td>
         <% if @post.user == current_user %>
           <td><%= link_to "投稿を削除", post_path(@post), method: :delete %></td>
         <% end %>
-      </tr>
-    </tbody>
-  </table>
+     </tr>
+   </tbody>
+</table>
 
-  <%= link_to "一覧に戻る", posts_path %>
+<h3>投稿に対するコメント  現在コメントが<%= @post.post_comments.count %>件届いております。</h3>
+
+<% @post.post_comments.each do |post_comment| %>
+  <p><%= post_comment.user.name %>さん
+  <%= post_comment.created_at.strftime("%Y/%m/%d/" "%H:%M") %></p>
+  <p><%= post_comment.comment %>
+
+  <% if post_comment.user == current_user %>
+    <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete %></p>
+  <% end %>
+<% end %>
+
+<h1>コメント投稿</h1>
+<%= form_with model:[@post, @post_comment], local: true do |f| %>
+  <%= f.text_area :comment, cols:"100", rows:"7", placeholder: "コメントをここに" %>
+  <p><%= f.submit "送信" %></p>
+<% end %>
+
+<%= link_to "一覧に戻る", posts_path %>
