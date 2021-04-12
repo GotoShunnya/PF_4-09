@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_04_09_082547) do
     t.string "encrypted_password", default: "", null: false
     t.string "name", null: false
     t.string "name_kana", null: false
-    t.text "introduction", default: "Nice to meet you", null: false
+    t.string "introduction", default: "よろしくお願いします。", null: false
     t.string "profile_image_id"
     t.string "phone_number", null: false
     t.boolean "is_deleted", default: false, null: false
