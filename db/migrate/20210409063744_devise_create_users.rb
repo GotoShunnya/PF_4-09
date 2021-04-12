@@ -9,7 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       t.string :name, null: false
       t.string :name_kana, null: false
-      t.text :introduction, null: false, default: "よろしくお願いします。"
+      t.text :introduction, null: false, default: "Nice to meet you"
       t.string :profile_image_id
       t.string :phone_number, null: false
       t.boolean :is_deleted, null: false, default: false
