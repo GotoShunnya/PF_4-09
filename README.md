@@ -30,7 +30,9 @@
 
 ## 設計書
 
-<...>
+- ワイヤーフレーム（https://app.diagrams.net/#G1Gq0FXSYtf13prVQxhUV7zrveXEKDCmVP）
+- テーブル定義書（https://docs.google.com/spreadsheets/d/1153DATd9mx1yIMA8WWXYRsMzBt0O-4irFR1Z0YyMGww/edit#gid=1383204039）
+- アプリケーション詳細設計（https://docs.google.com/spreadsheets/d/1CX_U2AwAL855eSuhW1oVbwsJ-8OtR2FjCSuPMu0jRMw/edit#gid=0）
 
 ## 機能一覧
 
