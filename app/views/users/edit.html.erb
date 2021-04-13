@@ -1,2 +1,28 @@
 <h1>編集ページ</h1>
 
+<%= form_with model: @user, local: true do |f| %>
+
+  <h3>名前（ニックネーム可）</h3>
+  <%= f.text_field :name %>
+
+  <h3>かな</h3>
+  <%= f.text_field :name_kana %>
+
+  <h3>自己紹介文</h3>
+  <%= f.text_area :introduction %>
+
+  <h3>プロフィール写真</h3>
+  <P><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", format: "jpeg", size: "90x90" %>※変更前<p>
+     <%= f.attachment_field :profile_image, id: "image" %>
+
+  <h3>メールアドレス</h3>
+  <%= f.email_field :email %>
+
+  <h3>電話番号</h3>
+  <%= f.telephone_field :phone_number %>
+
+  <p><%= f.submit "変更する" %></p>
+<% end %>
+<%= link_to "編集せず詳細に戻る", user_path(@user) %>
+
+
