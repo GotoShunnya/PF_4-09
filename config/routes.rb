@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root to: "users#top"
   get "users/about"
   get "users/leave"
-  get "users/withdraw"
+  patch "users/withdraw"
+
   resources :users, only: [:show, :edit, :update]
 
   resources :posts, only: [:new, :index, :create, :show, :destroy] do
