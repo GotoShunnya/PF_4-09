@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc).page(params[:page]).reverse_order #1ページで決められた件数だけを、新しく取得する。
   end
 
   def create
