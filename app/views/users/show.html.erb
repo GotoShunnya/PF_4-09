@@ -12,7 +12,7 @@
       <th>自己紹介文 <%= @user.introduction %></th>
     </tr>
     <tr>
-      <th>プロフィール写真 <%= attachment_image_tag @user, :profile_image, format:"jpeg", size:"90x90" %></th>
+      <th>プロフィール写真 <%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", format:"jpeg", size:"90x90" %></th>
     </tr>
     <tr>
       <th>メールアドレス <%= @user.email %></th>
@@ -24,3 +24,7 @@
 </table>
 
 <%= link_to "編集する", edit_user_path(@user) %>
+
+<% if user_signed_in? && @user.id == current_user.id %> <!--ログインしていて且つ、ログインユーザであれば表示-->
+  <%= link_to "退会する", users_leave_path(current_user) %>
+<% end %>

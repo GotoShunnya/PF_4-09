@@ -23,9 +23,14 @@ class UsersController < ApplicationController
   end
 
   def leave
+    @user = current_user
   end
 
   def withdraw
+    @user = current_user #@userにcurrent_userを入れ
+    @user.update(is_deleted: true) #@userのis_deletedをtrueにupdate
+    reset_session #すべてのセッション情報を削除（ログアウトさせる。）
+    redirect_to root_path
   end
 
   private
