@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.order(created_at: :desc).page(params[:page]).reverse_order # userに紐づくpostを取得。同時にリストの昇順・kaminariの設定
   end
 
   def edit

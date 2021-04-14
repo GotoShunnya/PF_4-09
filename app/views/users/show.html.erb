@@ -20,11 +20,47 @@
     <tr>
       <th>電話番号 <%= @user.phone_number %></th>
     </tr>
+    <tr>
+      <td><%= link_to "編集する", edit_user_path(@user) %></td>
+    </tr>
   </thead>
 </table>
 
-<%= link_to "編集する", edit_user_path(@user) %>
-
+</br>
 <% if user_signed_in? && @user.id == current_user.id %> <!--ログインしていて且つ、ログインユーザであれば表示-->
   <%= link_to "退会する", users_leave_path(current_user) %>
 <% end %>
+</br>
+</br>
+
+<h3>ご自身が投稿した「わがまま」一覧</h3>
+
+<% @posts.each do |posts| %>
+  <table>
+    <thead>
+      <tr>
+        <th>投稿者</th>
+        <th>Title</th>
+        <% if posts.image.present? %><!--present?で@postsのimageカラムの中身が存在するか確認。存在すれば表示する。-->
+          <th>Image</th>
+        <% end %>
+        <th>投稿日時</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= posts.user.name %></td>
+        <td><%= link_to posts.title, post_path(posts.id) %></td>
+        <% if posts.image.present? %>
+          <td><%= attachment_image_tag posts, :image, format:"jpeg", size:"200x200" %></td>
+        <% end %>
+        <td><%= posts.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+      </tr>
+      <tr id= "post_<%= posts.id %>">
+        <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: posts %></td></br>
+        <td>コメント数<%= posts.post_comments.count %></td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
+<%= paginate @posts %>

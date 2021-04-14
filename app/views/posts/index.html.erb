@@ -23,6 +23,7 @@
       </tr>
       <tr id= "post_<%= posts.id %>">
         <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: posts %></td>
+        <td>コメント数<%= posts.post_comments.count %></td></br>
       </tr>
     </tbody>
   </table>
