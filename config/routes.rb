@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "users/about"
   get "users/leave"
   patch "users/withdraw"
+  get 'search/search'
 
   resources :users, only: [:show, :edit, :update]
 
