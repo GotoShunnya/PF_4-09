@@ -21,6 +21,9 @@
         <% end %>
         <td><%= posts.created_at.strftime("%Y/%m/%d %H:%M") %></td>
       </tr>
+      <tr id= "post_<%= posts.id %>">
+        <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: posts %></td>
+      </tr>
     </tbody>
   </table>
 <% end %>
