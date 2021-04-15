@@ -26,6 +26,11 @@
       <li>
         <%= link_to "マイページはこちら", user_path(current_user) %>
       </li>
+    <% elsif admin_signed_in? %>
+      <li>管理者</li>
+      <li>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </li>
     <% else %>
       <li>
         <%= link_to"ログイン", new_user_session_path %>

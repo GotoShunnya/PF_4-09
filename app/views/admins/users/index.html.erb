@@ -1,0 +1,17 @@
+<h1>ユーザ一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <th>ユーザ名</th>
+      <th>投稿件数</th>
+      <th>ステータス</th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.posts.count %></td>
+        <td><%= user.user_status %></td>
+      </tr>
+    <% end %>
+  </thead>
+</table>
