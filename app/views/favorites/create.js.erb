@@ -1,0 +1,4 @@
+$("#post_<%= @post.id %> .favorite_btn").html("<%= j(render "favorites/favorite-btn", post: @post) %>");
+<!--$()内はセクレタ。idがpost_〇の要素の中の、favorite-btnの要素を指定。-->
+<!-- .html()で対象のセレクタの内容を（）の内容に変更させる。-->
+<!-- j()は「escape_iavascript()」の略。createアクションで処理をした最新の@postを部分テンプレートで書き換える。

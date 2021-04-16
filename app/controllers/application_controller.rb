@@ -1,8 +1,13 @@
 class ApplicationController < ActionController::Base
   before_action :configuer_permitted_parameters, if: :devise_controller?
 
-  def after_sign_in_path_for(resources)
-    posts_path(resources)
+  def after_sign_in_path_for(resource)
+    case resource
+    when Admin
+      admins_users_path
+    when User
+      posts_path
+    end
   end
 
   protected

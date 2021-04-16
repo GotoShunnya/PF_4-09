@@ -1,3 +1,4 @@
+<%= render "posts/post_search", post: @posts %>
 <h1>index</h1>
 
 <% @posts.each do |posts| %>
@@ -20,6 +21,10 @@
           <td><%= attachment_image_tag posts, :image, format:"jpeg", size:"200x200" %></td>
         <% end %>
         <td><%= posts.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+      </tr>
+      <tr id= "post_<%= posts.id %>">
+        <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: posts %></td>
+        <td>コメント数<%= posts.post_comments.count %></td></br>
       </tr>
     </tbody>
   </table>

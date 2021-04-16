@@ -22,13 +22,16 @@
          <td><%= link_to "投稿を削除", post_path(@post), method: :delete %></td>
        <% end %>
      </tr>
+     <tr id="post_<%= @post.id %>">
+       <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: @post %></td>
+     </tr>
    </tbody>
-</table>
+</table></br>
 
-<h3>投稿に対するコメント  現在コメントが<%= @post.post_comments.count %>件届いております。</h3>
+<h3>投稿に対するコメント  現在コメントが<%= @post.post_comments.count %>件届いております。</h3></br>
 
 <% @post.post_comments.each do |post_comment| %>
-  <p><%= post_comment.user.name %>さん
+  <%= post_comment.user.name %>さん
   <%= post_comment.created_at.strftime("%Y/%m/%d/" "%H:%M") %></p>
   <p><%= post_comment.comment %>
 

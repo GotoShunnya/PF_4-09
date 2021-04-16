@@ -1,0 +1,37 @@
+<h1>投稿詳細</h1>
+
+<table>
+   <thead>
+     <tr>
+       <th>Title</th>
+       <th>Body</th>
+       <% if @post.image.present? %>
+       <th>Image</th>
+       <% end %>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td><%= @post.title %></td>
+       <td><%= @post.body %></td>
+       <% if @post.image.present? %>
+         <td><%= attachment_image_tag @post, :image, format:"jpeg", size:"200x200" %></td>
+       <% end %>
+     </tr>
+     <tr>
+       <td>わがまま！数<%= @post.favorites.count %></td>
+     </tr>
+     <tr>
+       <td><%= link_to "投稿を削除する", admins_post_path, method: :delete %></td>
+     </tr>
+   </tbody>
+</table></br>
+
+<h3>投稿に対するコメント <%= @post.favorites.count %>件</h3></br>
+
+<% @post.post_comments.each do |post_comment| %>
+  <%= post_comment.user.name %>さん
+  <%= post_comment.created_at.strftime("%Y/%m/%d/" "%H:%M") %></p>
+  <p><%= post_comment.comment %>
+  <%= link_to "コメントを削除", admins_post_post_comment_path(post_comment.post, post_comment), method: :delete %>
+<% end %>
