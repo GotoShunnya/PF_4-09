@@ -7,6 +7,9 @@
   <h4>Body</h4>
   <%= f.text_area :body %>
 
+  <P><%= f.label :tag_list, "タグ作成欄" %></p><!--後でf.labelに変更-->
+  <%= f.text_field :tag_list, value: @post.tag_list.join(",") %>
+
   <h4>image</h4>
   <%= f.attachment_field :image %>
 

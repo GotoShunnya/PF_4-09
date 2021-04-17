@@ -1,5 +1,10 @@
 <%= render "posts/post_search", post: @posts %>
-<h1>index</h1>
+
+<% if params[:tag_name] %>
+  <h1>タグ検索</h1><%= @posts.count %>件ヒットしました。
+<% else %>
+  <h1>index</h1>
+<% end %>
 
 <% @posts.each do |posts| %>
   <table>
@@ -10,6 +15,9 @@
         <% if posts.image.present? %><!--present?で@postsのimageカラムの中身が存在するか確認。存在すれば表示する。-->
           <th>Image</th>
         <% end %>
+        <% if posts.tag_list.present? %><!--present?で@postsのimageカラムの中身が存在するか確認。存在すれば表示する。-->
+          <th>tags</th>
+        <% end %>
         <th>投稿日時</th>
       </tr>
     </thead>
@@ -19,6 +27,10 @@
         <td><%= link_to posts.title, post_path(posts.id) %></td>
         <% if posts.image.present? %>
           <td><%= attachment_image_tag posts, :image, format:"jpeg", size:"200x200" %></td>
+        <% end %>
+
+        <% if posts.tag_list.present? %>
+          <td><%= render "posts/tag_list", tag_list: posts.tag_list %></td>
         <% end %>
         <td><%= posts.created_at.strftime("%Y/%m/%d %H:%M") %></td>
       </tr>

@@ -8,6 +8,9 @@
        <% if @post.image.present? %>
        <th>Image</th>
        <% end %>
+       <% if @post.tag_list.present? %>
+         <th>tag</th>
+       <% end %>
      </tr>
    </thead>
    <tbody>
@@ -17,6 +20,10 @@
        <% if @post.image.present? %>
          <td><%= attachment_image_tag @post, :image, format:"jpeg", size:"200x200" %></td>
        <% end %>
+
+       <% if @post.tag_list.present? %>
+          <td><%= @post.tag_list %></td>
+        <% end %>
      </tr>
      <tr>
        <td>わがまま！数<%= @post.favorites.count %></td>

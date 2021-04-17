@@ -4,7 +4,11 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.order(created_at: :desc).page(params[:page]).reverse_order #1ページで決められた件数だけを、新しく取得する。
+    if params[:tag_name]
+      @posts = Post.tagged_with("#{params[:tag_name]}").order(created_at: :desc).page(params[:page]).reverse_order#1ページで決められた件数だけを、新しく取得する
+    else
+      @posts = Post.all.order(created_at: :desc).page(params[:page]).reverse_order
+    end
   end
 
   def create
@@ -34,7 +38,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :body, :image)
+    params.require(:post).permit(:title, :body, :image, :tag_list)
   end
 
 end
