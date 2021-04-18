@@ -6,6 +6,6 @@ class Post < ApplicationRecord
   acts_as_taggable
 
   def favorited_by?(user) #引数で渡されたユーザidが、favoritesテーブルに存在するかを調べるメソッドを作成
-    favorites.where(user_id: user.id).exists?
+      favorites.where(user_id: user.id).exists?
   end
 end

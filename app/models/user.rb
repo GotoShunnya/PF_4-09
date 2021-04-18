@@ -14,7 +14,7 @@ class User < ApplicationRecord
     super && (self.is_deleted == false) #is_deletedがfalseならtrueを返す
   end
 
-  def user_status
+  def user_status #adminのステータス表示に使用
     if is_deleted == false
       "有効"
     elsif is_deleted == true

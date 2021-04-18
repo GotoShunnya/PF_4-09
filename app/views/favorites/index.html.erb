@@ -1,0 +1,36 @@
+<h1>いいねした投稿一覧</h1>
+<%= @posts.user.each do |posts| %><!--わからない-->
+  <table>
+    <thead>
+      <tr>
+        <th>投稿者</th>
+        <th>Title</th>
+        <% if posts.image.present? %><!--present?で@postsのimageカラムの中身が存在するか確認。存在すれば表示する。-->
+          <th>Image</th>
+        <% end %>
+        <% if posts.tag_list.present? %><!--present?で@postsのtag_listカラムの中身が存在するか確認。存在すれば表示する。-->
+          <th>tags</th>
+        <% end %>
+        <th>投稿日時</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= posts.user.name %></td>
+        <td><%= link_to posts.title, post_path(posts.id) %></td>
+        <% if posts.image.present? %>
+          <td><%= attachment_image_tag posts, :image, format:"jpeg", size:"200x200" %></td>
+        <% end %>
+
+        <% if posts.tag_list.present? %>
+          <td><%= render "posts/tag_list", tag_list: posts.tag_list %></td>
+        <% end %>
+        <td><%= posts.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+      </tr>
+      <tr id= "post_<%= posts.id %>">
+        <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: posts %></td>
+        <td>コメント数<%= posts.post_comments.count %></td></br>
+      </tr>
+    </tbody>
+  </table>
+  <% end %>

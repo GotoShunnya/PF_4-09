@@ -26,6 +26,9 @@
       <li>
         <%= link_to "マイページはこちら", user_path(current_user) %>
       </li>
+      <li>
+        <!--%= link_to "いいねした投稿一覧はこちら", post_favorites_path(@posts) %-->
+      </li>
     <% elsif admin_signed_in? %>
       <li>管理者</li>
       <li>
