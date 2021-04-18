@@ -29,4 +29,8 @@ Rails.application.routes.draw do
 
   get 'search/search'
 
+  get 'inquiries/new'
+  post 'inquiries/confirm'
+  post 'inquiries/thanks'
+
 end

@@ -29,6 +29,9 @@
       <li>
         <!--%= link_to "いいねした投稿一覧はこちら", post_favorites_path(@posts) %-->
       </li>
+      <li>
+        <%= link_to "お問い合わせフォームはこちら", inquiries_new_path %>
+      </li>
     <% elsif admin_signed_in? %>
       <li>管理者</li>
       <li>

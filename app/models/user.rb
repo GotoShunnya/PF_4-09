@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy #あるuserが削除されると、紐づけているモデルの情報も消される。
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :inquiry
 
   def active_for_authentication? #is_drletedがtrueのユーザをはじく処理を作成
     super && (self.is_deleted == false) #is_deletedがfalseならtrueを返す
@@ -21,5 +22,4 @@ class User < ApplicationRecord
       "退会済み"
     end
   end
-
 end
