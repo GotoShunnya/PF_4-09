@@ -1,6 +1,6 @@
 <%= render "posts/post_search", post: @posts %>
 
-<% if params[:tag_name] %>
+<% if params[:tag_name] %><!--paramsでtag_nameが渡されているか。渡されなければelseへ-->
   <h1>タグ検索</h1><%= @posts.count %>件ヒットしました。
 <% else %>
   <h1>index</h1>
@@ -15,7 +15,7 @@
         <% if posts.image.present? %><!--present?で@postsのimageカラムの中身が存在するか確認。存在すれば表示する。-->
           <th>Image</th>
         <% end %>
-        <% if posts.tag_list.present? %><!--present?で@postsのimageカラムの中身が存在するか確認。存在すれば表示する。-->
+        <% if posts.tag_list.present? %><!--present?で@postsのtag_listカラムの中身が存在するか確認。存在すれば表示する。-->
           <th>tags</th>
         <% end %>
         <th>投稿日時</th>

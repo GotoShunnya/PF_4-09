@@ -1,4 +1,5 @@
 class Admins::UsersController < ApplicationController
+  before_action :authenticate_admin!#adminがログイン中のみ許可する
 
   def index
     @users = User.all

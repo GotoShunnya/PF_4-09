@@ -1,4 +1,5 @@
 class Admins::PostsController < ApplicationController
+  before_action :authenticate_admin!#adminがログイン中のみ許可する
 
   def show
     @post = Post.find(params[:id])

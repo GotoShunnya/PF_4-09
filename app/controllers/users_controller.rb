@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: [:top, :about, :show] #ログイン中のみ許可する(exceptで選択したアクションは除く)
+
   def top
   end
 

@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if user_signed_in? %><!--ログイン時のみ検索機能が使える-->
   <%= form_with url: search_search_path, method: :get, local: true do |f| %>
     <%= f.text_field "search[value]" %>
     <%= f.select "search[model]", options_for_select({"Post" => "post"}) %><!--f.labelだと情報渡せない。。。-->
