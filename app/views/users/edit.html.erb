@@ -1,6 +1,7 @@
 <h1>編集ページ</h1>
 
 <%= form_with model: @user, local: true do |f| %>
+<%= render "layouts/error_messages", model: f.object %>
 
   <h3>名前（ニックネーム可）</h3>
   <%= f.text_field :name %>

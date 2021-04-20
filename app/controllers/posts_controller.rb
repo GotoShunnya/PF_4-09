@@ -7,9 +7,9 @@ class PostsController < ApplicationController
 
   def index
     if params[:tag_name]
-      @posts = Post.tagged_with("#{params[:tag_name]}").order(created_at: :desc).page(params[:page]).reverse_order#1ページで決められた件数だけを、新しく取得する
+      @posts = Post.tagged_with("#{params[:tag_name]}").order(created_at: :desc).page(params[:page]).reverse_order
     else
-      @posts = Post.all.order(created_at: :desc).page(params[:page]).reverse_order
+      @posts = Post.all.order(created_at: :desc).page(params[:page]).reverse_order#1ページで決められた件数だけを、新しく取得する
     end
   end
 
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to post_path(@post.id)
+      redirect_to user_post_path(current_user, @post.id)
     else
       render :new
     end

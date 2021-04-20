@@ -1,5 +1,6 @@
 <h1>お問い合わせフォーム</h1>
 <%= form_with model: @inquiry, url: inquiries_confirm_path, local: true do |f| %>
+  <%= render "layouts/error_messages", model: f.object %>
   <table>
     <thead>
       <tr>

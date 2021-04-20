@@ -2,12 +2,12 @@ class Admins::UsersController < ApplicationController
   before_action :authenticate_admin!#adminがログイン中のみ許可する
 
   def index
-    @users = User.all
+    @users = User.all.order(created_at: :desc).page(params[:page]).reverse_order
   end
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts
+    @posts = @user.posts.order(created_at: :desc).page(params[:page]).reverse_order
   end
 
   def update

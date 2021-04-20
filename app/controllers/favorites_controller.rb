@@ -1,9 +1,11 @@
 class FavoritesController < ApplicationController
 before_action :authenticate_user!
 
-  #def index
+  def index
     #@posts = Post.all
-  #end
+    my_favorites = Favorite.where(user_id: current_user.id)
+    @posts = Post.where(id: my_favorites.pluck(:post_id))
+  end
 
   def create
     @post = Post.find(params[:post_id])

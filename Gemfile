@@ -71,6 +71,7 @@ gem "refile-mini_magick"
 gem "dotenv-rails"
 gem "rubocop-airbnb"
 gem "acts-as-taggable-on", "~> 6.0"
+gem "rails-i18n"
 
 group :production do
   gem "mysql2"

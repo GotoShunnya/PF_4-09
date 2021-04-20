@@ -1,4 +1,0 @@
-DB_USERNAME="root"
-DB_PASSWORD="Jerido0803"
-DB_HOST="rds-mysql-server2.cipjp3oww3vw.ap-northeast-1.rds.amazonaws.com"
-DB_DATABASE="わがままを提案に変える～スナック「我がママ」～"

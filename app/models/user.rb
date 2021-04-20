@@ -6,10 +6,17 @@ class User < ApplicationRecord
 
   attachment :profile_image
 
+  validates :name, uniqueness: true, length: { in: 2..10 } #2~10文字以内で保存、一意性を持たせる。
+  validates :name_kana, length: { in: 2..20 }
+  validates :introduction, length: { in: 5..200 }
+  validates :phone_number, presence: true, uniqueness: true
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i #メールアドレスの正規表現の定義
+  validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX } #空では×、一意性を持たせ且つ、定義した正規表現でないと保存されない。
+
   has_many :posts, dependent: :destroy #あるuserが削除されると、紐づけているモデルの情報も消される。
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  has_many :inquiry
 
   def active_for_authentication? #is_drletedがtrueのユーザをはじく処理を作成
     super && (self.is_deleted == false) #is_deletedがfalseならtrueを返す
