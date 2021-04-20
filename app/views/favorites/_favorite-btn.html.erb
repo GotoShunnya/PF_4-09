@@ -1,10 +1,10 @@
 <% if user_signed_in? %>
   <% if post.favorited_by?(current_user) %>
-    <%= link_to user_post_favorites_path(current_user, post), method: :delete, remote: true do %><!--remote: trueで非同期通信に-->
+    <%= link_to post_favorites_path(post), method: :delete, remote: true do %><!--remote: trueで非同期通信に-->
       ♥<%= post.favorites.count %>わがまま！
     <% end %>
   <% else %>
-    <%= link_to user_post_favorites_path(current_user, post), method: :post, remote: true do %>
+    <%= link_to post_favorites_path(post), method: :post, remote: true do %>
      ♡<%= post.favorites.count %>わがまま！
     <% end %>
   <% end %>

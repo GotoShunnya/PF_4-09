@@ -7,7 +7,7 @@ class PostCommentsController < ApplicationController
     @post_comment = current_user.post_comments.new(post_comment_params)
     @post_comment.post_id = @post.id
     if @post_comment.save
-      redirect_to user_post_path(current_user, @post)
+      redirect_to post_path(@post)
     else
       render "posts/show"
     end

@@ -26,7 +26,7 @@
        <% end %>
 
        <% if @post.user == current_user %><!--投稿したユーザとcurrent_userが一致すれば表示する-->
-         <td><%= link_to "投稿を削除", user_post_path(current_user, @post), method: :delete %></td>
+         <td><%= link_to "投稿を削除", post_path(@post), method: :delete %></td>
        <% end %>
      </tr>
      <tr id="post_<%= @post.id %>">
@@ -43,16 +43,16 @@
   <p><%= post_comment.comment %></p>
 
   <% if post_comment.user == current_user %>
-    <%= link_to "削除", user_post_post_comment_path(current_user, post_comment.post, post_comment), method: :delete %></p>
+    <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete %></p>
   <% end %>
 <% end %>
 
 <h1>コメント投稿</h1>
-<%= form_with model:[current_user, @post, @post_comment], local: true do |f| %>
+<%= form_with model:[@post, @post_comment], local: true do |f| %>
 <%= render "layouts/error_messages", model: f.object %>
 
   <%= f.text_area :comment, cols:"100", rows:"7", placeholder: "コメントをここに" %>
   <p><%= f.submit "送信" %></p>
 <% end %>
 
-<%= link_to "一覧に戻る", user_posts_path %>
+<%= link_to "一覧に戻る", posts_path %>
