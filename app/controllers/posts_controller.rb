@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     if @post.destroy
-      redirect_to posts_path
+      redirect_to user_posts_path
     else
       render :show
     end
