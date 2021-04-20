@@ -1,11 +1,4 @@
-<%= render "posts/post_search", post: @posts %>
-
-<% if params[:tag_name] %><!--paramsでtag_nameが渡されているか。渡されなければelseへ-->
-  <h1>タグ検索</h1><%= @posts.count %>件ヒットしました。
-<% else %>
-  <h1>index</h1>
-<% end %>
-
+<h1>いいねした投稿一覧</h1>
 <% @posts.each do |post| %>
   <table>
     <thead>
@@ -24,7 +17,7 @@
     <tbody>
       <tr>
         <td><%= post.user.name %></td>
-        <td><%= link_to post.title, user_post_path(post.user.id, post.id) %></td>
+        <td><%= link_to post.title, user_post_path(current_user, post.id) %></td>
         <% if post.image.present? %>
           <td><%= attachment_image_tag post, :image, format:"jpeg", size:"200x200" %></td>
         <% end %>
@@ -40,5 +33,4 @@
       </tr>
     </tbody>
   </table>
-<% end %>
-<%= paginate @posts %>
+  <% end %>

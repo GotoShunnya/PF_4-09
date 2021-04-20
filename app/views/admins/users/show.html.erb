@@ -45,6 +45,9 @@
         <% if posts.image.present? %><!--present?で@postsのimageカラムの中身が存在するか確認。存在すれば表示する。-->
           <th>Image</th>
         <% end %>
+        <% if posts.tag_list.present? %><!--present?で@postsのimageカラムの中身が存在するか確認。存在すれば表示する。-->
+          <th>tag</th>
+        <% end %>
         <th>投稿日時</th>
       </tr>
     </thead>
@@ -55,6 +58,10 @@
         <% if posts.image.present? %>
           <td><%= attachment_image_tag posts, :image, format:"jpeg", size:"200x200" %></td>
         <% end %>
+
+        <% if posts.tag_list.present? %>
+          <td><%= posts.tag_list %></td>
+        <% end %>
         <td><%= posts.created_at.strftime("%Y/%m/%d %H:%M") %></td>
       </tr>
       <tr>
@@ -64,3 +71,4 @@
     </tbody>
   </table>
 <% end %>
+<%= paginate @posts %>

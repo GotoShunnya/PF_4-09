@@ -1,0 +1,39 @@
+<h1>確認画面</h1>
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>メールアドレス</th>
+      <th>お問い合わせ内容</th>
+    </tr>
+  </thead>
+  <%= form_with model: @inquiry, url: inquiries_thanks_path, local: true do |f| %>
+  <tbody>
+    <tr>
+      <th>
+        <%= f.hidden_field :name %>
+        <%= @inquiry.name %>
+      </th>
+      <th>
+        <%= f.hidden_field :email %>
+        <%= @inquiry.email %>
+      </th>
+      <th>
+        <%= f.hidden_field :message %>
+        <%= @inquiry.message %>
+      </th>
+    </tr>
+    <tr>
+      <th><%= f.submit "送信" %></th>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+
+  <%= form_with model: @inquiry, url: inquiries_back_path, local: true do |f| %><!--newページに戻る用のhidden_field-->
+    <%= f.hidden_field :name %>
+    <%= f.hidden_field :email %>
+    <%= f.hidden_field :message %>
+    <%= f.submit "入力画面に戻る" %>
+  <% end %>
+

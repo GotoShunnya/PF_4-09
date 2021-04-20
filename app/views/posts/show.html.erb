@@ -6,7 +6,10 @@
        <th>Title</th>
        <th>Body</th>
        <% if @post.image.present? %><!--present?で@postsのimageカラムの中身が存在するか確認。存在すれば表示する。-->
-       <th>Image</th>
+         <th>Image</th>
+       <% end %>
+       <% if @post.tag_list.present? %>
+         <th>tag</th>
        <% end %>
      </tr>
    </thead>
@@ -18,8 +21,12 @@
          <td><%= attachment_image_tag @post, :image, format:"jpeg", size:"200x200" %></td>
        <% end %>
 
+       <% if @post.tag_list.present? %>
+         <td><%= render "posts/tag_list", tag_list: @post.tag_list %></td>
+       <% end %>
+
        <% if @post.user == current_user %><!--投稿したユーザとcurrent_userが一致すれば表示する-->
-         <td><%= link_to "投稿を削除", post_path(@post), method: :delete %></td>
+         <td><%= link_to "投稿を削除", user_post_path(current_user, @post), method: :delete %></td>
        <% end %>
      </tr>
      <tr id="post_<%= @post.id %>">
@@ -32,18 +39,20 @@
 
 <% @post.post_comments.each do |post_comment| %>
   <%= post_comment.user.name %>さん
-  <%= post_comment.created_at.strftime("%Y/%m/%d/" "%H:%M") %></p>
-  <p><%= post_comment.comment %>
+  <%= post_comment.created_at.strftime("%Y/%m/%d/" "%H:%M") %>
+  <p><%= post_comment.comment %></p>
 
   <% if post_comment.user == current_user %>
-    <%= link_to "削除", post_post_comment_path(post_comment.post, post_comment), method: :delete %></p>
+    <%= link_to "削除", user_post_post_comment_path(current_user, post_comment.post, post_comment), method: :delete %></p>
   <% end %>
 <% end %>
 
 <h1>コメント投稿</h1>
-<%= form_with model:[@post, @post_comment], local: true do |f| %>
+<%= form_with model:[current_user, @post, @post_comment], local: true do |f| %>
+<%= render "layouts/error_messages", model: f.object %>
+
   <%= f.text_area :comment, cols:"100", rows:"7", placeholder: "コメントをここに" %>
   <p><%= f.submit "送信" %></p>
 <% end %>
 
-<%= link_to "一覧に戻る", posts_path %>
+<%= link_to "一覧に戻る", user_posts_path %>

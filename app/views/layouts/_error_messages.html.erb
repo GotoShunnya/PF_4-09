@@ -1,0 +1,9 @@
+<% if model.errors.any? %>
+  <div class = "errors_messages" >
+    <ul>
+      <% model.errors.full_messages.each do |message| %><!--errors.full_messagesですべてのエラーメッセージを取得。それをeachで出していく。-->
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

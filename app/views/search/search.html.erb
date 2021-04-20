@@ -1,12 +1,12 @@
-<h1>わがまま検索 search_for "<%= @value %>"</h1>
+<h1>わがまま検索 search_for "<%= @value %>" <%= @dates.count %>件ヒットしました。</h1>
 
-<% @dates.each do |posts| %>
+<% @dates.each do |date| %>
   <table>
     <thead>
       <tr>
         <th>投稿者</th>
         <th>Title</th>
-        <% if posts.image.present? %>
+        <% if date.image.present? %>
           <th>Image</th>
         <% end %>
         <th>投稿日時</th>
@@ -14,16 +14,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><%= posts.user.name %></td>
-        <td><%= link_to posts.title, post_path(posts.id) %></td>
-        <% if posts.image.present? %>
-          <td><%= attachment_image_tag posts, :image, format:"jpeg", size:"200x200" %></td>
+        <td><%= date.user.name %></td>
+        <td><%= link_to date.title, user_post_path(date.user.id, date.id) %></td>
+        <% if date.image.present? %>
+          <td><%= attachment_image_tag date, :image, format:"jpeg", size:"200x200" %></td>
         <% end %>
-        <td><%= posts.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+
+        <% if date.tag_list.present? %>
+          <td><%= render "posts/tag_list", tag_list: date.tag_list %></td>
+        <% end %>
+        <td><%= date.created_at.strftime("%Y/%m/%d %H:%M") %></td>
       </tr>
-      <tr id= "post_<%= posts.id %>">
-        <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: posts %></td>
-        <td>コメント数<%= posts.post_comments.count %></td></br>
+      <tr id= "post_<%= date.id %>">
+        <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: date %></td>
+        <td>コメント数<%= date.post_comments.count %></td></br>
       </tr>
     </tbody>
   </table>

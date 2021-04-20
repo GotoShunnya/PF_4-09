@@ -11,21 +11,25 @@ Rails.application.routes.draw do
   get "users/leave"
   patch "users/withdraw"
 
-  resources :users, only: [:show, :edit, :update]
-    namespace :admins do
-      resources :users, only: [:index, :show, :update]
+  resources :users, only: [:show, :edit, :update] do
+    resources :posts, only: [:new, :index, :create, :show, :destroy] do
+      resource :favorites, only: [:create, :destroy]
+      resources :post_comments, only: [:create, :destroy]
     end
-
-  resources :posts, only: [:new, :index, :create, :show, :destroy] do
-    resource :favorites, only: [:create, :destroy]
-    resources :post_comments, only: [:create, :destroy]
+    resources :favorites, only: [:index]
   end
-    namespace :admins do
-      resources :posts, only: [:show, :destroy] do
-        resources :post_comments, only: [:destroy]
-      end
+  namespace :admins do
+    resources :users, only: [:index, :show, :update]
+    resources :posts, only: [:show, :destroy] do
+      resources :post_comments, only: [:destroy]
     end
+  end
 
-  get 'search/search'
+  get "search/search"
+
+  get "inquiries/new"
+  post "inquiries/back"
+  post "inquiries/confirm"
+  post "inquiries/thanks"
 
 end

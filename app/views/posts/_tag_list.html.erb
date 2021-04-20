@@ -1,0 +1,7 @@
+<% tag_list.each do |tag| %><!--複数のtagを1つずつ取り出す-->
+  <% if user_signed_in? %><!--ログイン時のみtag検索使用可能-->
+    <%= link_to tag, user_posts_path(current_user, tag_name: tag) %>
+  <% else %>
+    <%= tag %>
+  <% end %>
+<% end %>
