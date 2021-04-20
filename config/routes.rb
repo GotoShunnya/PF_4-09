@@ -11,6 +11,13 @@ Rails.application.routes.draw do
   get "users/leave"
   patch "users/withdraw"
 
+  get "search/search"
+
+  get "inquiries/new"
+  post "inquiries/back"
+  post "inquiries/confirm"
+  post "inquiries/thanks"
+
   resources :users, only: [:show, :edit, :update] do
     resources :posts, only: [:new, :index, :create, :show, :destroy] do
       resource :favorites, only: [:create, :destroy]
@@ -24,12 +31,4 @@ Rails.application.routes.draw do
       resources :post_comments, only: [:destroy]
     end
   end
-
-  get "search/search"
-
-  get "inquiries/new"
-  post "inquiries/back"
-  post "inquiries/confirm"
-  post "inquiries/thanks"
-
 end
