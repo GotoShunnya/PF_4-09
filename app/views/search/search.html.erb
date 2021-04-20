@@ -15,7 +15,7 @@
     <tbody>
       <tr>
         <td><%= date.user.name %></td>
-        <td><%= link_to date.title, user_post_path(date.user.id, date.id) %></td>
+        <td><%= link_to date.title, post_path(date.id) %></td>
         <% if date.image.present? %>
           <td><%= attachment_image_tag date, :image, format:"jpeg", size:"200x200" %></td>
         <% end %>

@@ -18,13 +18,14 @@ Rails.application.routes.draw do
   post "inquiries/confirm"
   post "inquiries/thanks"
 
-  resources :users, only: [:show, :edit, :update] do
-    resources :posts, only: [:new, :index, :create, :show, :destroy] do
-      resource :favorites, only: [:create, :destroy]
-      resources :post_comments, only: [:create, :destroy]
-    end
+  resources :users, only: [:show, :edit, :update]
+  
+  resources :posts, only: [:new, :index, :create, :show, :destroy] do
     resources :favorites, only: [:index]
+    resource :favorites, only: [:create, :destroy]
+    resources :post_comments, only: [:create, :destroy]
   end
+    
   namespace :admins do
     resources :users, only: [:index, :show, :update]
     resources :posts, only: [:show, :destroy] do
