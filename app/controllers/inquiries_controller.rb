@@ -21,8 +21,11 @@ class InquiriesController < ApplicationController
 
   def thanks
     @inquiry = Inquiry.new(inquiry_params)
-    InquiryMailer.send_mail(@inquiry).deliver
+    if InquiryMailer.send_mail(@inquiry).deliver
       render :thanks
+    else
+      render :new
+    end
   end
 
   private
