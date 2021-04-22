@@ -16,3 +16,12 @@
  @import "bootstrap";
  @import "font-awesome-sprockets";
  @import "font-awesome";
+
+ .errors_messages{
+    border: 2px solid red;
+
+    ul{
+      color: red;
+    }
+  }
+
