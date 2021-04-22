@@ -1,20 +1,31 @@
-<h1>投稿機能フォーム</h1>
-<%= form_with model:[@post], local: true do |f| %>
-<%= render "layouts/error_messages", model: f.object %>
+<div class = "post_new">
+  <h1>投稿機能フォーム</h1>
+  <%= form_with model:[@post], local: true do |f| %>
+  <%= render "layouts/error_messages", model: f.object %>
 
-  <h4>Title</h4>
-  <%= f.text_field :title %>
-
-  <h4>Body</h4>
-  <%= f.text_area :body %>
-
-  <P><%= f.label :tag_list, "タグ作成欄" %></p><!--後でf.labelに変更-->
-  <%= f.text_field :tag_list, value: @post.tag_list.join(",") %>
-
-  <h4>image</h4>
-  <%= f.attachment_field :image %>
-
-  <p><%= f.submit "投稿する" %></p>
-<% end %>
-
-<%= link_to "投稿一覧に戻る", posts_path %>
+  <table class = "post_new_table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th><%= f.text_field :title %></th>
+      </tr>
+      <tr>
+        <th>Body</th>
+        <th><%= f.text_area :body %></th>
+      </tr>
+      <tr>
+        <th><%= f.label :tag_list, "タグ作成欄" %></th><!--後でf.labelに変更-->
+        <th><%= f.text_field :tag_list, value: @post.tag_list.join(",") %></th>
+      </tr>
+      <tr>
+        <th>image</th>
+        <th><%= f.attachment_field :image %></th>
+      </tr>
+      <tr>
+        <th><%= f.submit "投稿する" %></th>
+        <th><%= link_to "投稿一覧に戻る", posts_path %></th>
+      </tr>
+    </thead>
+  </table>
+  <% end %>
+</div>
