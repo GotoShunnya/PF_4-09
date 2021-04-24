@@ -1,3 +1,36 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top_title{
+
+}
+
+.main-visual{
+  background-image: image-url("20161211192038.jpg");
+  background-position: center;
+  margin: auto;
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+
+  .main-visual-text{
+    width: 40%;
+    height: 400px;
+    background-color: rgba(0,0,0,0.5);
+    color: #EEEEEE;
+    text-align: center;
+    padding-top: 100px;
+  }
+}
+
+  .main-button{
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+
+    button{
+      padding: 10px;
+      margin: 15px ;
+    }
+  }
