@@ -63,9 +63,12 @@
         </div>
       </nav>
     </header>
-    <footer>
-
-    </footer>
     <%= yield %>
   </body>
+  <footer>
+      <div>Copyrihgt © 2021 ××××××</div>
+      <div>サイト制作者: Shunnya Goto</div>
+      <div><%= link_to"当サイトのご説明", users_about_path %></div>
+      <div><%= link_to "お問い合わせフォーム", inquiries_new_path %></div>
+  </footer>
 </html>

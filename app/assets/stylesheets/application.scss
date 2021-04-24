@@ -29,6 +29,14 @@
    font-family: Georgia, serif;
  }
 
+ footer {
+   background-color: #EEEEEE;
+   display: flex;
+   justify-content: space-between;
+   padding-top: 25px;
+   min-height: 70px;
+ }
+
  .errors_messages {
     border: 2px solid red;
 
