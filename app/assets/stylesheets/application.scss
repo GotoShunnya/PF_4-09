@@ -17,6 +17,18 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
 
+/*ブラウザ特有のCSSを解除する「リセットCSS」*/
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+
+/*フォントの指定*/
+ body{
+   font-family: Georgia, serif;
+ }
+
  .errors_messages{
     border: 2px solid red;
 
@@ -24,4 +36,3 @@
       color: red;
     }
   }
-
