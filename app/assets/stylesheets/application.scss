@@ -35,6 +35,14 @@
    justify-content: space-between;
    padding-top: 25px;
    min-height: 70px;
+
+   a {
+     color: #333;
+   }
+
+   a:hover {
+     color: #222222;
+   }
  }
 
  .errors_messages {
