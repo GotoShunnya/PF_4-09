@@ -1,13 +1,19 @@
-<%= render "posts/post_search", post: @posts %>
-
 <% if params[:tag_name] %><!--paramsでtag_nameが渡されているか。渡されなければelseへ-->
-  <h1>タグ検索</h1><%= @posts.count %>件ヒットしました。
+  <h1 class="index-title">わがままタグ検索</h1>
+  <div class="search-count">
+    <%= @posts.count %>件ヒットしました。
+  </div>
 <% else %>
-  <h1>index</h1>
+  <h1 class="index-title">お客様のわがまま一覧</h1>
 <% end %>
 
+<div class="search">
+  <%= render "posts/post_search", post: @posts %>
+</div>
+
 <% @posts.each do |post| %>
-  <table>
+<div class="index-table">
+  <table class="table-text">
     <thead>
       <tr>
         <th>投稿者</th>
@@ -40,5 +46,6 @@
       </tr>
     </tbody>
   </table>
+</div>
 <% end %>
 <%= paginate @posts %>

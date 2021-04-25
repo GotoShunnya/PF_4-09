@@ -2,24 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.post-new{
+//index/
+.index-title {
   text-align: center;
-  padding: 10px;
-  width: 100%;
+  padding-top: 15px;
+}
 
-  .post-new-table{
-    margin-left: auto;
-    margin-right: auto;
-    border: 10px outset #aaa;
-    background: #FFCCFF;
+.search-count {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 150%;
+}
 
-    th{
-      padding: 20px;
-    }
-  }
+.search {
+  text-align: center;
+  padding-top: 15px;
+}
 
-  .index-button{
-   margin-left: 60%;
-   padding: 10px;
-  }
+.index-table {
+  margin: 4% 25% 4%25%;
+  border: 10px outset;
+}
+
+.table-text {
+  margin-right: auto;
+  margin-left: auto;
 }

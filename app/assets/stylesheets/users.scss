@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //Topページレイアウト/
-.Top-title {
+.top-title {
   text-align: right;
   padding: 15px 10% 10px;
 }
@@ -73,37 +73,37 @@ h6 {
 //----------------------------------------------------------/
 
 //Aboutページレイアウト/
-.About-title {
-  padding-left: 10%;
+.about-title {
+  padding: 15px 0 0 10%;
 }
 
-h3 {
+.about-item {
   text-align: center;
   padding: 2%;
 }
 
-.About-1 {
+.about-content1 {
   margin-left: 15%;
   padding: 10px;
 }
 
-.About-2 {
+.about-content2 {
   margin-left: 15%;
   padding: 10px;
 }
 
-.About-3 {
+.about-content3 {
   text-align: center;
   padding: 10px;
 }
 
-.About-4 {
+.about-content4 {
   text-align: center;
   padding: 10px 0 35px;
 }
 //----------------------------------------------------------/
 
-//Log_in・Sign_up/
+//Log_in・Sign_inで共有/
 .background-image {
   background-image: image-url("C789_doornomukou_TP_V.jpg");
   background-position: center;
@@ -118,7 +118,7 @@ h3 {
     margin: 0 25% 0 25%;
   }
 
-  .Log_in-title {
+  .title {
     margin-left: 22%;
     padding: 40px;
   }
@@ -135,19 +135,54 @@ h3 {
     color: #EEEEEE;
   }
 
-  .remember_me-field {
+  .remember-me-field {
     margin-left: 30%;
     padding: 40px 40px 10px 40px;
     color: #EEEEEE;
   }
 
-  .Log_in-actions {
+  .log-in-button {
     margin-left: 49%;
     padding-left: 40px;
   }
 
-  .min-height {
+  .min-height { //高さの最小値を設定/
     min-height: 186px;
-
   }
 }
+
+//Sign_upのみ/
+.error_explanation { //Deviseのエラーメッセージ/
+  padding: 20px;
+  color: #FFBEDA;
+}
+
+.name-kana-field {
+  margin-left: 31%;
+  padding: 30px;
+  color: #EEEEEE;
+}
+
+.email-field {
+  margin-left: 31%;
+  padding: 30px;
+  color: #EEEEEE;
+}
+
+.phone-number-field {
+  margin-left: 31%;
+  padding: 30px;
+  color: #EEEEEE;
+}
+
+.password-confirmation {
+  margin-left: 31%;
+  padding: 30px;
+  color: #EEEEEE;
+}
+
+.sign-in-button {
+  margin-left: 62%;
+
+}
+//----------------------------------------------------------/

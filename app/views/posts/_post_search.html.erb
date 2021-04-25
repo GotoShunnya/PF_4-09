@@ -1,7 +1,7 @@
 <% if user_signed_in? %><!--ログイン時のみ検索機能が使える-->
   <%= form_with url: search_search_path, method: :get, local: true do |f| %>
     <%= f.text_field "search[value]" %>
-    <%= f.select "search[model]", options_for_select({"Post" => "post"}) %><!--f.labelだと情報渡せない。。。-->
+    <%= f.select "search[model]", options_for_select({"わがまま検索" => "post" }) %><!--f.labelだと情報渡せない。。。-->
     <%= f.select "search[how]", options_for_select({"完全一致" => "match", "部分一致" => "partical"}) %>
     <%= f.submit "検索" %>
   <% end %>
