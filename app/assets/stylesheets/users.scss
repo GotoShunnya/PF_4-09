@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //Topページレイアウト/
-.top-title {
+.top-heading {
   text-align: right;
   padding: 15px 10% 10px;
 }
@@ -73,7 +73,7 @@ h6 {
 //----------------------------------------------------------/
 
 //Aboutページレイアウト/
-.about-title {
+.about-heading {
   padding: 15px 0 0 10%;
 }
 
@@ -146,7 +146,7 @@ h6 {
     padding-left: 40px;
   }
 
-  .min-height { //高さの最小値を設定/
+  .log-in-min-height { //高さの最小値を設定/
     min-height: 186px;
   }
 }
@@ -181,8 +181,149 @@ h6 {
   color: #EEEEEE;
 }
 
-.sign-in-button {
+.sign-up-button {
   margin-left: 62%;
 
 }
+
+.sign-up-min-height { //高さの最小値を設定/
+    min-height: 120px;
+  }
 //----------------------------------------------------------/
+
+//show/
+.container {
+  display: flex;
+}
+
+.my-page {
+  margin-right: 15px;
+}
+
+.my-page-heading {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.my-page-table {
+  border: 8px inset;
+}
+
+.my-page-name {
+  font-size: 18px;
+  padding-top: 15px;
+}
+
+.my-page-kana {
+  @extend .my-page-name;
+}
+
+.my-page-kana {
+  @extend .my-page-name;
+}
+
+.my-page-introduction {
+  @extend .my-page-name;
+}
+
+.my-page-profile-image {
+  @extend .my-page-name;
+}
+
+.my-page-email {
+  @extend .my-page-name;
+}
+
+.my-page-phone-number {
+  @extend .my-page-name;
+  padding-bottom: 15px;
+}
+
+.my-page-button {
+  text-align: center;
+}
+
+//マイページの一覧部分//
+.my-post {
+  margin-left: 10%;
+  padding-top: 15px;
+}
+
+.my-post-table {
+  text-align: center;
+}
+
+//----------------------------------------------------------//
+
+//edit/
+.edit-heading {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.edit-table {
+  margin: auto;
+}
+
+.edit-name {
+  padding: 20px;
+}
+
+.edit-kana {
+  @extend .edit-name;
+}
+
+.edit-introduction {
+  @extend .edit-name;
+}
+
+.edit-profile-image {
+  @extend .edit-name;
+}
+
+.edit-email {
+  @extend .edit-name;
+}
+
+.edit-phone-number {
+  @extend .edit-name;
+}
+
+.edit-submit {
+  text-align: right;
+  padding: 20px 20px 20px 0;
+}
+
+.edit-back-button {
+  margin-left: 12%;
+  padding-bottom: 30px;
+}
+
+//----------------------------------------------------------/
+
+//leave/
+.leave-heading {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.leave-item {
+  text-align: center;
+  padding: 10px;
+}
+
+.leave-button-padding {
+  padding-top: 60px;
+}
+
+.leave-back-button {
+  margin-left: 20%;
+}
+
+.leave-button {
+  margin-left: 40%
+}
+
+.leave-min-height {
+  min-height: 278px;
+}

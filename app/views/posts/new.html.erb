@@ -1,37 +1,35 @@
-<div class = "post-new">
-  <h1>投稿機能フォーム</h1>
-  <%= form_with model:[@post], local: true do |f| %>
-  <%= render "layouts/error_messages", model: f.object %>
+<h1 class="new-heading">投稿機能フォーム</h1>
+<%= form_with model:[@post], local: true do |f| %>
+<%= render "layouts/error_messages", model: f.object %>
 
-    <table class = "post-new-table">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th><%= f.text_area :title, cols:"70", rows:"1" %></th>
-        </tr>
-        <tr>
-          <th>Body</th>
-          <th><%= f.text_area :body, cols:"70", rows:"7" %></th>
-        </tr>
-        <tr>
-          <th><%= f.label :tag_list, "タグ作成欄" %></th><!--後でf.labelに変更-->
-          <th><%= f.text_area :tag_list, cols:"70", rows:"1", value: @post.tag_list.join(",") %></th>
-        </tr>
-        <tr>
-          <th>image</th>
-          <th><%= f.attachment_field :image %></th>
-        </tr>
-      </thead>
-      <tfoot>
-        <tr>
-          <th colspan="2"><%= f.submit "投稿する" %></th>
-        </tr>
-      </tfoot>
-    </table>
-  <% end %>
+  <table class = "new-table">
+    <thead>
+      <tr>
+        <th><%= f.label :title, "タイトル" %></th>
+        <th class="new-title"><%= f.text_area :title, cols:"70", rows:"1" %></th>
+      </tr>
+      <tr>
+        <th><%= f.label :body, "内容" %></th>
+        <th class="new-body"><%= f.text_area :body, cols:"70", rows:"6" %></th>
+      </tr>
+      <tr>
+        <th><%= f.label :tag_list, "タグ作成欄" %></th><!--後でf.labelに変更-->
+        <th class="new-tag"><%= f.text_area :tag_list, cols:"70", rows:"1", value: @post.tag_list.join(",") %></th>
+      </tr>
+      <tr>
+        <th><%= f.label :image, "写真（任意）" %></th>
+        <th class="new-image"><%= f.attachment_field :image %></th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th colspan="2" class="new-submit"><%= f.submit "投稿する" %></th>
+      </tr>
+    </tfoot>
+  </table>
+<% end %>
 
-  <div class = "index-button">
-    <button><%= link_to "一覧に戻る", posts_path %></button>
-  </div>
-
+<div class = "new-back-button">
+  <button><%= link_to "一覧に戻る", posts_path %></button>
 </div>
+<div class="new-min-height"></div>

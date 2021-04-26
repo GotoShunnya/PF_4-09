@@ -1,13 +1,16 @@
-<h1>わがまま検索 search_for "<%= @value %>" <%= @dates.count %>件ヒットしました。</h1>
+<h1 class="search-heading">わがまま検索 search_for "<%= @value %>" <%= @dates.count %>件ヒットしました。</h1>
 
 <% @dates.each do |date| %>
-  <table>
+  <table class="search-table">
     <thead>
       <tr>
         <th>投稿者</th>
-        <th>Title</th>
-        <% if date.image.present? %>
-          <th>Image</th>
+        <% if date.user.profile_image.present? %>
+          <th>プロフィール画像</th>
+        <% end %>
+        <th>タイトル</th>
+        <% if date.tag_list.present? %>
+          <th>タグ</th>
         <% end %>
         <th>投稿日時</th>
       </tr>
@@ -15,11 +18,10 @@
     <tbody>
       <tr>
         <td><%= date.user.name %></td>
-        <td><%= link_to date.title, post_path(date.id) %></td>
-        <% if date.image.present? %>
-          <td><%= attachment_image_tag date, :image, format:"jpeg", size:"200x200" %></td>
+        <% if date.user.profile_image.present? %>
+          <td><%= attachment_image_tag date.user, :profile_image, format:"jpeg", size:"100x100" %></td>
         <% end %>
-
+        <td><%= link_to date.title, post_path(date.id) %></td>
         <% if date.tag_list.present? %>
           <td><%= render "posts/tag_list", tag_list: date.tag_list %></td>
         <% end %>

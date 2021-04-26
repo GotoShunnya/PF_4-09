@@ -1,11 +1,11 @@
 <div class="background-color">
   <% if params[:tag_name] %><!--paramsでtag_nameが渡されているか。渡されなければelseへ-->
-    <h1 class="index-title">わがままタグ検索</h1>
+    <h1 class="index-heading">わがままタグ検索</h1>
     <div class="search-count">
       <%= @posts.count %>件ヒットしました。
     </div>
   <% else %>
-    <h1 class="index-title">お客様のわがまま一覧</h1>
+    <h1 class="index-heading">お客様のわがまま一覧</h1>
   <% end %>
 
   <div class="search">
@@ -18,10 +18,10 @@
       <thead>
         <tr>
           <th>投稿者</th>
-          <th>Title</th>
-          <% if post.image.present? %><!--present?で@postsのimageカラムの中身が存在するか確認。存在すれば表示する。-->
-            <th>Image</th>
+          <% if post.user.profile_image_id.present? %><!--present?で@posts.userのprofile_image_idカラムの中身が存在するか確認。存在すれば表示する。-->
+            <th>プロフィール画像</th>
           <% end %>
+          <th>タイトル</th>
           <% if post.tag_list.present? %><!--present?で@postsのtag_listカラムの中身が存在するか確認。存在すれば表示する。-->
             <th>tags</th>
           <% end %>
@@ -31,11 +31,10 @@
       <tbody>
         <tr>
           <td><%= post.user.name %></td>
-          <td><%= link_to post.title, post_path(post.id) %></td>
-          <% if post.image.present? %>
-            <td><%= attachment_image_tag post, :image, format:"jpeg", size:"200x150" %></td>
+          <% if post.user.profile_image.present? %>
+            <td><%= attachment_image_tag post.user, :profile_image, format:"jpeg", size:"100x100" %></td>
           <% end %>
-
+          <td><%= link_to post.title, post_path(post.id) %></td>
           <% if post.tag_list.present? %>
             <td><%= render "posts/tag_list", tag_list: post.tag_list %></td>
           <% end %>

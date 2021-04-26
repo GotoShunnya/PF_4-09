@@ -1,3 +1,13 @@
 // Place all the styles related to the Search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.search-heading {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.search-table {
+  margin: auto; //一緒にwidthやheightも指定する。
+  width: 80%;
+}

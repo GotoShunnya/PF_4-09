@@ -1,6 +1,13 @@
-<h1>退会確認画面</h1>
+<h1 class="leave-heading">退会確認画面</h1>
 
-<h3>本当に退会いたしますか？</h3>
-<p>退会するとデータが失われ、次回ログインも出来なくなります。</p>
-<%= link_to "退会せずマイページに戻る", user_path(@user) %>
-<%= link_to "退会する", users_withdraw_path, method: :patch %>
+<div class="leave-item">
+  <h3 class="leave-item">本当に退会いたしますか？</h3>
+  <h3 class="leave-item">退会するとデータが失われ、次回ログインも出来なくなります。</h3>
+  <h3 class="leave-item">退会しない方は、戻るボタンまたは退会しない方はマイページに戻るを押してください。</h3>
+</div>
+
+<div class="leave-button-padding">
+  <button class="leave-back-button"><%= link_to "退会せずマイページに戻る", user_path(@user) %></button>
+  <button class="leave-button"><%= link_to "退会する", users_withdraw_path, method: :patch %></button>
+</div>
+<div class="leave-min-height"></div>

@@ -1,29 +1,44 @@
-<h1>編集ページ</h1>
+<h1 class="edit-heading">編集ページ</h1>
 
 <%= form_with model: @user, local: true do |f| %>
 <%= render "layouts/error_messages", model: f.object %>
-
-  <h3>名前（ニックネーム可）</h3>
-  <%= f.text_field :name %>
-
-  <h3>かな</h3>
-  <%= f.text_field :name_kana %>
-
-  <h3>自己紹介文</h3>
-  <%= f.text_area :introduction %>
-
-  <h3>プロフィール写真</h3>
-  <P><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", format: "jpeg", size: "90x90" %>※変更前<p>
-     <%= f.attachment_field :profile_image, id: "image" %>
-
-  <h3>メールアドレス</h3>
-  <%= f.email_field :email %>
-
-  <h3>電話番号</h3>
-  <%= f.telephone_field :phone_number %>
-
-  <p><%= f.submit "変更する" %></p>
+<table class="edit-table">
+  <thead>
+    <tr>
+      <th><%= f.label :name, "名前" %></th>
+      <th class="edit-name"><%= f.text_area :name, cols:"50", rows:"1" %></th>
+    </tr>
+    <tr>
+      <th><%= f.label :name_kana, "かな" %></th>
+      <th class="edit-kana"><%= f.text_area :name_kana, cols:"50", rows:"1" %></th>
+    </tr>
+    <tr>
+      <th><%= f.label :introduction, "自己紹介文" %></th>
+      <th class="edit-introduction"><%= f.text_area :introduction, cols:"50", rows:"4" %></th>
+    </tr>
+    <tr>
+      <th><%= f.label :profile_image, "プロフィール画像" %></th>
+      <th class="edit-profile-image"><%= f.attachment_field :profile_image, id: "image" %></th>
+      <th><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", format: "jpeg", size: "150x150" %>※変更前</th>
+    </tr>
+    <tr>
+      <th><%= f.label :email, "メールアドレス" %></th>
+      <th class="edit-email"><%= f.email_field :email %></th>
+    </tr>
+    <tr>
+      <th><%= f.label :phone_number, "電話番号" %></th>
+      <th class="edit-phone-number"><%= f.telephone_field :phone_number %></th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th colspan="3" class="edit-submit"><%= f.submit "変更する" %></th>
+    </tr>
+  </tfoot>
+</table>
 <% end %>
-<%= link_to "編集せず詳細に戻る", user_path(@user) %>
+<div class="edit-back-button">
+  <button><%= link_to "編集せず詳細に戻る", user_path(@user) %></button>
+</div>
 
 

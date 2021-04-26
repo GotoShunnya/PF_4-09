@@ -3,16 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //index/
-.background-color {
-  background-color: #CCCCCC;
-  background-position: center;
-  background-size: cover;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-}
-
-.index-title {
+.index-heading {
    text-align: center;
    padding-top: 15px;
 }
@@ -34,8 +25,10 @@
 }
 
 .table-text {
+  text-align: center;
   margin-right: auto;
   margin-left: auto;
+  padding: 20px;
 }
 
 .paginate {
@@ -47,8 +40,115 @@
     padding: 0 5px 0 5px;
   }
 }
-
-
 //----------------------------------------------------------//
 
 //new/
+.new-heading {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.new-table {
+  margin: auto;
+}
+
+.new-title {
+  padding: 20px;
+}
+
+.new-body {
+  @extend .new-title;
+}
+
+.new-tag {
+  @extend .new-title;
+}
+
+.new-image {
+  @extend .new-title;
+}
+
+.new-submit {
+  text-align: right;
+  padding: 20px 20px 20px 0;
+}
+
+.new-back-button {
+  margin-left: 18%;
+  padding-bottom: 15px;
+}
+
+.new-min-height {
+  min-height: 47px;
+}
+//----------------------------------------------------------/
+
+//show/
+.show-heading {
+  text-align: center;
+  padding: 15px 15px;
+}
+
+.show-table {
+  margin: auto;
+}
+
+.show-title {
+  text-align: center;
+  padding-right: 30px;
+}
+
+.show-body {
+  @extend .show-title;
+}
+
+.show-image {
+  @extend .show-title;
+}
+
+.show-tag {
+  @extend .show-title;
+}
+
+.show-destroy {
+  margin-left: 80%;
+  padding: 20px;
+}
+
+//comment/
+.show-comment {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.comment-content {
+  font-size: 20px;
+  margin-left: 30%;
+  padding: 20px;
+
+}
+
+.comment-destroy-button {
+  margin-left: 80%;
+  padding: 5px;
+}
+
+.comment-heading {
+  margin-left: 20%;
+  padding: 15px 0 15px;
+}
+
+.comment-new {
+  margin-left: 15%;
+  padding-top: 30px;
+}
+
+.comment-submit {
+  margin-left: 66%;
+  padding: 10px;
+}
+
+.show-back-button{
+  margin-left: 50px;
+  padding: 20px;
+}
