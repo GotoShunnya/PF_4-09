@@ -29,6 +29,13 @@
    font-family: Georgia, serif;
  }
 
+.navber-brand { //ヘッダーのtop画面に遷移する「OPEN」アイコン。/
+  background-image: image-url("0127035006.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 60px;
+ }
+
  footer {
    background-color: #EEEEEE;
    display: flex;
