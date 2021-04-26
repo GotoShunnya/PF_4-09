@@ -3,9 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //index/
+.background-color {
+  background-color: #CCCCCC;
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
 .index-title {
-  text-align: center;
-  padding-top: 15px;
+   text-align: center;
+   padding-top: 15px;
 }
 
 .search-count {
@@ -38,6 +47,8 @@
     padding: 0 5px 0 5px;
   }
 }
+
+
 //----------------------------------------------------------//
 
 //new/
