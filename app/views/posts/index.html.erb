@@ -1,44 +1,54 @@
-<%= render "posts/post_search", post: @posts %>
+<div class="background-color">
+  <% if params[:tag_name] %><!--paramsでtag_nameが渡されているか。渡されなければelseへ-->
+    <h1 class="index-heading">わがままタグ検索</h1>
+    <div class="search-count">
+      <%= @posts.count %>件ヒットしました。
+    </div>
+  <% else %>
+    <h1 class="index-heading">お客様のわがまま一覧</h1>
+  <% end %>
 
-<% if params[:tag_name] %><!--paramsでtag_nameが渡されているか。渡されなければelseへ-->
-  <h1>タグ検索</h1><%= @posts.count %>件ヒットしました。
-<% else %>
-  <h1>index</h1>
-<% end %>
+  <div class="search">
+    <%= render "posts/post_search", post: @posts %>
+  </div>
 
-<% @posts.each do |post| %>
-  <table>
-    <thead>
-      <tr>
-        <th>投稿者</th>
-        <th>Title</th>
-        <% if post.image.present? %><!--present?で@postsのimageカラムの中身が存在するか確認。存在すれば表示する。-->
-          <th>Image</th>
-        <% end %>
-        <% if post.tag_list.present? %><!--present?で@postsのtag_listカラムの中身が存在するか確認。存在すれば表示する。-->
-          <th>tags</th>
-        <% end %>
-        <th>投稿日時</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= post.user.name %></td>
-        <td><%= link_to post.title, post_path(post.id) %></td>
-        <% if post.image.present? %>
-          <td><%= attachment_image_tag post, :image, format:"jpeg", size:"200x200" %></td>
-        <% end %>
-
-        <% if post.tag_list.present? %>
-          <td><%= render "posts/tag_list", tag_list: post.tag_list %></td>
-        <% end %>
-        <td><%= post.created_at.strftime("%Y/%m/%d %H:%M") %></td>
-      </tr>
-      <tr id= "post_<%= post.id %>">
-        <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: post %></td>
-        <td>コメント数<%= post.post_comments.count %></td></br>
-      </tr>
-    </tbody>
-  </table>
-<% end %>
-<%= paginate @posts %>
+  <% @posts.each do |post| %>
+  <div class="index-table">
+    <table class="table-text">
+      <thead>
+        <tr>
+          <th>投稿者</th>
+          <% if post.user.profile_image_id.present? %><!--present?で@posts.userのprofile_image_idカラムの中身が存在するか確認。存在すれば表示する。-->
+            <th>プロフィール画像</th>
+          <% end %>
+          <th>タイトル</th>
+          <% if post.tag_list.present? %><!--present?で@postsのtag_listカラムの中身が存在するか確認。存在すれば表示する。-->
+            <th>tags</th>
+          <% end %>
+          <th>投稿日時</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= post.user.name %></td>
+          <% if post.user.profile_image.present? %>
+            <td><%= attachment_image_tag post.user, :profile_image, format:"jpeg", size:"100x100" %></td>
+          <% end %>
+          <td><%= link_to post.title, post_path(post.id) %></td>
+          <% if post.tag_list.present? %>
+            <td><%= render "posts/tag_list", tag_list: post.tag_list %></td>
+          <% end %>
+          <td><%= post.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+        </tr>
+        <tr id= "post_<%= post.id %>">
+          <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: post %></td>
+          <td>コメント数<%= post.post_comments.count %></td></br>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <% end %>
+  <div class="paginate">
+    <%= paginate @posts %>
+  </div>
+</div>

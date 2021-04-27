@@ -10,10 +10,10 @@
   </head>
 
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg mb-3 border border-solid navbar-light">
+    <header class="shadow-sm"> <!--headerのハンバーガーメニュー,bootstrap仕様-->
+      <nav class="navbar navbar-expand-lg border border-solid navbar-light">
         <div class="container">
-          <div class="navbar-brand p-1"><%= link_to "とっぷ", root_path %></div>
+          <a class="navber-brand p-3" href="/"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -63,9 +63,13 @@
         </div>
       </nav>
     </header>
-    <footer>
-
-    </footer>
     <%= yield %>
   </body>
+  <footer>
+    <div>Copyrihgt © 2021 ××××××</div>
+    <div>サイト制作者: Shunnya Goto</div>
+    <div>住所: 〇〇県　〇〇市　〇〇〇〇〇</div>
+    <a href="users/about">｜当サイトのご説明｜</a>
+    <a href="inquiries/new">｜お問い合わせフォーム｜</a>
+  </footer>
 </html>

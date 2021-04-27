@@ -9,12 +9,11 @@ class PostsController < ApplicationController
     if params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}").order(created_at: :desc).page(params[:page]).reverse_order
     else
-      @posts = Post.all.order(created_at: :desc).page(params[:page]).reverse_order#1ページで決められた件数だけを、新しく取得する
-    end
+      @posts = Post.page(params[:page]).reverse_order.order(created_at: :desc) # ページネーション記述位置注意。この記述で適応された。
+    end # 1ページで決められた件数だけを、新しく取得する
   end
 
   def create
-    @posts = Post.new #変数名悩む
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
@@ -39,8 +38,8 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
     params.require(:post).permit(:title, :body, :image, :tag_list)
   end
-
 end

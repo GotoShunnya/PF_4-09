@@ -2,18 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.top-title {
+//Topページレイアウト/
+.top-heading {
   text-align: right;
-  padding-right: 10%;
+  padding: 15px 10% 10px;
 }
 
 .main-visual {
   background-image: image-url("20161211192038.jpg");
   background-position: center;
+  background-size: cover;
   margin: auto;
   width: 100%;
   height: 400px;
-  background-size: cover;
 
   .main-visual-text {
     width: 40%;
@@ -67,5 +68,269 @@
 }
 
 h6 {
-  padding: 0 0 10px 20%;
+  padding: 15px 0 15px 20%;
+}
+//----------------------------------------------------------/
+
+//Aboutページレイアウト/
+.about-heading {
+  padding: 15px 0 0 10%;
+}
+
+.about-item {
+  text-align: center;
+  padding: 2%;
+}
+
+.about-content1 {
+  margin-left: 15%;
+  padding: 10px;
+}
+
+.about-content2 {
+  margin-left: 15%;
+  padding: 10px;
+}
+
+.about-content3 {
+  text-align: center;
+  padding: 10px;
+}
+
+.about-content4 {
+  text-align: center;
+  padding: 10px 0 35px;
+}
+//----------------------------------------------------------/
+
+//Log_in・Sign_inで共有/
+.background-image {
+  background-image: image-url("C789_doornomukou_TP_V.jpg");
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+
+  .background-color{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 40px;
+    margin: 0 25% 0 25%;
+  }
+
+  .log-in-heading {
+    margin-left: 22%;
+    padding: 40px;
+  }
+
+  .name-field {
+    margin-left: 31%;
+    padding: 30px;
+    color: #EEEEEE;
+  }
+
+  .password-field {
+    margin-left: 31%;
+    padding: 30px 30px 10px 30px;
+    color: #EEEEEE;
+  }
+
+  .remember-me-field {
+    margin-left: 30%;
+    padding: 40px 40px 10px 40px;
+    color: #EEEEEE;
+  }
+
+  .log-in-button {
+    margin-left: 49%;
+    padding-left: 40px;
+  }
+
+  .log-in-min-height { //高さの最小値を設定/
+    min-height: 186px;
+  }
+}
+
+//Sign_upのみ/
+.sign-up-heading {
+  margin-left: 22%;
+  padding: 40px;
+}
+
+.error_explanation { //Deviseのエラーメッセージ/
+  padding: 20px;
+  color: #FFBEDA;
+}
+
+.name-kana-field {
+  margin-left: 31%;
+  padding: 30px;
+  color: #EEEEEE;
+}
+
+.email-field {
+  margin-left: 31%;
+  padding: 30px;
+  color: #EEEEEE;
+}
+
+.phone-number-field {
+  margin-left: 31%;
+  padding: 30px;
+  color: #EEEEEE;
+}
+
+.password-confirmation {
+  margin-left: 31%;
+  padding: 30px;
+  color: #EEEEEE;
+}
+
+.sign-up-button {
+  margin-left: 62%;
+
+}
+
+.sign-up-min-height { //高さの最小値を設定/
+    min-height: 120px;
+  }
+//----------------------------------------------------------/
+
+//show・プロフィール部分/
+.container {
+  display: flex;
+  margin: auto;
+  width: 80%;
+}
+
+.my-page {
+  margin-right: 15px;
+}
+
+.my-page-heading {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.my-page-table {
+  border: 8px inset;
+}
+
+.my-page-name {
+  font-size: 18px;
+  padding: 15px 0 0 5px;
+}
+
+.my-page-kana {
+  @extend .my-page-name;
+}
+
+.my-page-kana {
+  @extend .my-page-name;
+}
+
+.my-page-introduction {
+  @extend .my-page-name;
+}
+
+.my-page-profile-image {
+  @extend .my-page-name;
+}
+
+.my-page-email {
+  @extend .my-page-name;
+}
+
+.my-page-phone-number {
+  @extend .my-page-name;
+  padding-bottom: 15px;
+}
+
+.my-page-button {
+  text-align: center;
+}
+
+//マイページの一覧部分//
+.my-post {
+  margin-left: 10%;
+  padding-top: 15px;
+}
+
+.my-post-table {
+  text-align: center;
+}
+
+//----------------------------------------------------------//
+
+//edit/
+.edit-heading {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.edit-table {
+  margin: auto;
+}
+
+.edit-name {
+  padding: 20px;
+}
+
+.edit-kana {
+  @extend .edit-name;
+}
+
+.edit-introduction {
+  @extend .edit-name;
+}
+
+.edit-profile-image {
+  @extend .edit-name;
+}
+
+.edit-email {
+  @extend .edit-name;
+}
+
+.edit-phone-number {
+  @extend .edit-name;
+}
+
+.edit-submit {
+  text-align: right;
+  padding: 20px 20px 20px 0;
+}
+
+.edit-back-button {
+  margin-left: 12%;
+  padding-bottom: 30px;
+}
+
+//----------------------------------------------------------/
+
+//leave/
+.leave-heading {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.leave-item {
+  text-align: center;
+  padding: 10px;
+}
+
+.leave-button-padding {
+  padding-top: 60px;
+}
+
+.leave-back-button {
+  margin-left: 20%;
+}
+
+.leave-button {
+  margin-left: 40%
+}
+
+.leave-min-height {
+  min-height: 278px;
 }

@@ -29,10 +29,37 @@
    font-family: Georgia, serif;
  }
 
- .errors_messages {
-    border: 2px solid red;
+.navber-brand { //headerのtop画面に遷移する「OPEN」アイコン。/
+  background-image: image-url("0127035006.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 60px;
+ }
 
-    ul {
+ footer {
+   background-color: #EEEEEE;
+   display: flex;
+   justify-content: space-between;
+   padding-top: 25px;
+   min-height: 70px;
+
+   a { //footerのリンク/
+     color: #333;
+   }
+
+   a:hover { //ポインターを合わせると動作する/
+     color: #222222;
+   }
+ }
+
+  .errors_heading { //エラーメッセージ/
+    margin: auto;
+    width: 50%;
+    border: 2px solid;
+
+    .errors-ul {
+      margin-left: 20px;
+      padding-top: 10px;
       color: red;
     }
   }

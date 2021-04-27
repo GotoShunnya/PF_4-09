@@ -1,6 +1,6 @@
-<h1>いいねした投稿一覧</h1>
+<h1 class="favorite-heading">いいねした投稿一覧</h1>
 <% @posts.each do |post| %>
-  <table>
+  <table class="favorite-table">
     <thead>
       <tr>
         <th>投稿者</th>
@@ -27,7 +27,7 @@
         <% end %>
         <td><%= post.created_at.strftime("%Y/%m/%d %H:%M") %></td>
       </tr>
-      <tr id= "post_<%= post.id %>">
+      <tr id = "post_<%= post.id %>">
         <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: post %></td>
         <td>コメント数<%= post.post_comments.count %></td></br>
       </tr>

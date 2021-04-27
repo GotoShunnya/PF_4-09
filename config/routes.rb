@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-
   devise_for :users
 
   devise_for :admins, controllers: {
-    sessions: "admins/sessions"
+    sessions: "admins/sessions",
   }
 
   root to: "users#top"
@@ -32,5 +31,4 @@ Rails.application.routes.draw do
   post "inquiries/back"
   post "inquiries/confirm"
   post "inquiries/thanks"
-
 end
