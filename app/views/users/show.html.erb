@@ -1,31 +1,31 @@
 <div class="container">
-  <div class="my-page">
-    <h1 class="my-page-heading">マイページ</h1>
+  <div class="mypage">
+    <h1 class="mypage-heading">マイページ</h1>
 
-    <table class="my-page-table">
+    <table class="mypage-table">
       <thead>
         <tr>
-          <th class="my-page-name">名前（ニックネーム）<%= @user.name %></th>
+          <th class="mypage-name">名前（ニックネーム）<%= @user.name %></th>
         </tr>
         <tr>
-          <th class="my-page-kana">かな <%= @user.name_kana %></th>
+          <th class="mypage-kana">かな <%= @user.name_kana %></th>
         </tr>
         <tr>
-          <th class="my-page-introduction">自己紹介文 <%= @user.introduction %></th>
+          <th class="mypage-introduction">自己紹介文 <%= @user.introduction %></th>
         </tr>
         <tr>
-          <th class="my-page-profile-image">プロフィール写真 <%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", format:"jpeg", size:"90x90" %></th>
+          <th class="mypage-profile-image">プロフィール写真 <%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", format:"jpeg", size:"90x90" %></th>
         </tr>
         <tr>
-          <th class="my-page-email">メールアドレス <%= @user.email %></th>
+          <th class="mypage-email">メールアドレス <%= @user.email %></th>
         </tr>
         <tr>
-          <th class="my-page-phone-number">電話番号 <%= @user.phone_number %></th>
+          <th class="mypage-phone-number">電話番号 <%= @user.phone_number %></th>
         </tr>
       </thead>
       <tfoot colspan="2">
         <tr>
-          <th class="my-page-button">
+          <th class="mypage-button">
             <button><%= link_to "編集する", edit_user_path(@user) %></button>
             <% if user_signed_in? && @user.id == current_user.id %> <!--ログインしていて且つ、ログインユーザであれば表示-->
               <button><%= link_to "退会する", users_leave_path(current_user) %></button>
@@ -34,44 +34,49 @@
         </tr>
       </tfoot>
     </table>
+    <div class="favorite-button">
+      <button><%= link_to "いいねしたわがまま一覧", post_favorites_path(current_user) %></button>
+    </div>
   </div>
 
-  <div class="my-post">
-    <h3 class="my-post-heading">ご自身が投稿した「わがまま」一覧</h3>
+  <div class="mypost">
+    <h1 class="mypost-heading">ご自身が投稿した「わがまま」一覧</h1>
 
     <% @posts.each do |post| %>
-    <table class="my-post-table">
-      <thead>
-        <tr>
-          <th>投稿者</th>
-          <% if post.user.profile_image.present? %>
-          <th>プロフィール画像</th>
-          <% end %>
-          <th>内容</th>
-          <% if post.tag_list.present? %>
-          <th>タグ</th>
-          <% end %>
-          <th>投稿日時</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><%= post.user.name %></td>
-          <% if post.user.profile_image.present? %>
-          <td><%= attachment_image_tag post.user, :profile_image, format:"jpeg", size:"100x100" %></td>
-          <% end %>
-          <td><%= link_to post.title, post_path(post.id) %></td>
-          <% if post.tag_list.present? %>
-          <td><%= render "posts/tag_list", tag_list: post.tag_list %></td>
-          <% end %>
-          <td><%= post.created_at.strftime("%Y/%m/%d %H:%M") %></td>
-        </tr>
-        <tr id= "post_<%= post.id %>">
-          <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: post %></td></br>
-          <td>コメント数<%= post.post_comments.count %></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="mypost-table-border">
+      <table class="mypost-table">
+        <thead>
+          <tr>
+            <th>投稿者</th>
+            <% if post.user.profile_image.present? %>
+            <th>プロフィール画像</th>
+            <% end %>
+            <th>タイトル</th>
+            <% if post.tag_list.present? %>
+            <th>タグ</th>
+            <% end %>
+            <th>投稿日時</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= post.user.name %></td>
+            <% if post.user.profile_image.present? %>
+            <td><%= attachment_image_tag post.user, :profile_image, format:"jpeg", size:"100x100" %></td>
+            <% end %>
+            <td><%= link_to post.title, post_path(post.id) %></td>
+            <% if post.tag_list.present? %>
+            <td><%= render "posts/tag_list", tag_list: post.tag_list %></td>
+            <% end %>
+            <td><%= post.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+          </tr>
+          <tr id= "post_<%= post.id %>">
+            <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: post %></td></br>
+            <td>コメント数<%= post.post_comments.count %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   <% end %>
   </div>
 </div>

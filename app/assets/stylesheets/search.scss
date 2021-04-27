@@ -7,7 +7,15 @@
   padding-top: 15px;
 }
 
-.search-table {
+.search-table-border {
   margin: auto; //一緒にwidthやheightも指定する。
+  margin-bottom: 30px;
   width: 80%;
+  border: 10px outset;
+}
+
+.search-table {
+  text-align: center;
+  margin: auto; //一緒にwidthやheightも指定する。
+  width: 100%;
 }

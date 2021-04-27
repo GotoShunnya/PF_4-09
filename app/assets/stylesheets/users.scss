@@ -19,7 +19,7 @@
   .main-visual-text {
     width: 40%;
     height: 400px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: #EEEEEE;
     text-align: center;
     padding-top: 100px;
@@ -203,61 +203,79 @@ h6 {
   width: 80%;
 }
 
-.my-page {
+.mypage {
   margin-right: 15px;
 }
 
-.my-page-heading {
+.mypage-heading {
   text-align: center;
   padding-top: 15px;
 }
 
-.my-page-table {
+.mypage-table {
   border: 8px inset;
 }
 
-.my-page-name {
+.mypage-name {
   font-size: 18px;
   padding: 15px 0 0 5px;
 }
 
-.my-page-kana {
-  @extend .my-page-name;
+.mypage-kana {
+  @extend .mypage-name;
 }
 
-.my-page-kana {
-  @extend .my-page-name;
+.mypage-kana {
+  @extend .mypage-name;
 }
 
-.my-page-introduction {
-  @extend .my-page-name;
+.mypage-introduction {
+  @extend .mypage-name;
 }
 
-.my-page-profile-image {
-  @extend .my-page-name;
+.mypage-profile-image {
+  @extend .mypage-name;
 }
 
-.my-page-email {
-  @extend .my-page-name;
+.mypage-email {
+  @extend .mypage-name;
 }
 
-.my-page-phone-number {
-  @extend .my-page-name;
+.mypage-phone-number {
+  @extend .mypage-name;
   padding-bottom: 15px;
 }
 
-.my-page-button {
+.mypage-button {
   text-align: center;
+  padding-bottom: 10px;
 }
 
-//マイページの一覧部分//
-.my-post {
-  margin-left: 10%;
+.favorite-button{
+  text-align: center;
   padding-top: 15px;
 }
 
-.my-post-table {
+//マイページの一覧部分//
+.mypost {
+  margin: auto;
+  width: 100%;
+  padding-top: 15px;
+}
+
+.mypost-heading {
   text-align: center;
+}
+
+.mypost-table-border {
+  margin-bottom: 30px;
+  border: 10px inset;
+}
+
+.mypost-table {
+  text-align: center;
+  margin: auto;
+  width: 100%;
 }
 
 //----------------------------------------------------------//
@@ -309,6 +327,10 @@ h6 {
 //----------------------------------------------------------/
 
 //leave/
+.leave-background-color {
+  background-color: #EEEEEE;
+}
+
 .leave-heading {
   text-align: center;
   padding-top: 15px;
@@ -317,6 +339,7 @@ h6 {
 .leave-item {
   text-align: center;
   padding: 10px;
+  color: #FF0000;
 }
 
 .leave-button-padding {

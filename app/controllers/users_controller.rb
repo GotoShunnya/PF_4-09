@@ -19,8 +19,9 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user)
+      redirect_to user_path(@user), notice: "編集内容を保存しました。"
     else
+      flash.now[:alert] = "編集の保存に失敗しました。"
       render :edit
     end
   end
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
     @user = current_user # @userにcurrent_userを入れ
     @user.update(is_deleted: true) # @userのis_deletedをtrueにupdate
     reset_session # すべてのセッション情報を削除（ログアウトさせる。）
-    redirect_to root_path
+    redirect_to root_path, notice: "退会いたしました。ご利用いただきありがとうございました。"
   end
 
   private

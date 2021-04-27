@@ -8,6 +8,16 @@
   padding-top: 15px;
 }
 
-.favorite-table {
+.favorite-table-border {
   margin: auto;
+  width: 80%;
+  margin-bottom: 30px;
+  border: 10px inset;
+}
+
+.favorite-table {
+  text-align: center;
+  margin: auto;
+  margin-bottom: 30px;
+  width: 100%;
 }

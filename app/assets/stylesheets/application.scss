@@ -53,13 +53,29 @@
  }
 
   .errors_heading { //エラーメッセージ/
+    background-color: rgba(0, 0, 0, 0.5);
     margin: auto;
-    width: 50%;
-    border: 2px solid;
+    width: 60%;
 
     .errors-ul {
-      margin-left: 20px;
-      padding-top: 10px;
-      color: red;
+      margin: auto;
+      width: 60%;
+      padding: 10px 0 10px;
+      color: #FFDDFF;
     }
+  }
+
+  .flash { //deviceのflashメッセージのカラー設定。キーを2つ設定しているので、noticeとalertの2色を設定/
+    color: $white;
+    text-align: center;
+    &_alert {
+      background-color: red;
+    }
+    &_notice {
+      background-color: $green;
+    }
+  }
+
+  button {
+    padding: 5px;
   }

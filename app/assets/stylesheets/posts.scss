@@ -5,35 +5,36 @@
 //index/
 .index-heading {
    text-align: center;
-   padding-top: 15px;
+   padding-top: 30px;
 }
 
 .search-count {
   text-align: center;
-  padding-top: 15px;
+  padding-bottom: 20px;
   font-size: 150%;
 }
 
 .search {
   text-align: center;
-  padding-top: 15px;
+  padding-bottom: 30px;
 }
 
-.index-table {
-  margin: 4% 25% 4%25%;
+.index-table-border {
+  margin: auto;
+  margin-bottom: 30px;
+  width: 80%;
   border: 10px outset;
 }
 
-.table-text {
+.index-table {
   text-align: center;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 20px;
+  margin: auto;
+  width: 100%;
 }
 
 .paginate {
   margin-left: 45%;
-  padding-bottom: 15px;
+  padding-bottom: 30px;
   font-size: 20px;
 
   a {   //ページネーションのリンク/
@@ -79,7 +80,7 @@
 }
 
 .new-min-height {
-  min-height: 47px;
+  min-height: 52px;
 }
 //----------------------------------------------------------/
 
@@ -118,7 +119,8 @@
 //comment/
 .show-comment {
   text-align: center;
-  padding-bottom: 20px;
+  padding: 20px 20px;
+  border-top: 2px solid;
 }
 
 .comment-content {

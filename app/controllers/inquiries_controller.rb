@@ -22,8 +22,10 @@ class InquiriesController < ApplicationController
   def thanks
     @inquiry = Inquiry.new(inquiry_params)
     if InquiryMailer.send_mail(@inquiry).deliver
+      flash.now[:notice] = "送信完了いたしました。"
       render :thanks
     else
+      flash.now[:alert] = "送信に失敗しました。"
       render :new
     end
   end

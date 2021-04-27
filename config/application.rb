@@ -15,8 +15,9 @@ module PF
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-    config.time_zone = "Asia/Tokyo"
-    config.i18n.default_locale = :ja
+    config.time_zone = "Asia/Tokyo" #日本時間に設定
+    config.i18n.default_locale = :ja #エラーメッセージ日本語化
+    #.ymlにカラムやdeviseの日本語の定義をすれば、日本語で表示される。今回は実装しない。(githubなどにソースコードあり。)
 
   end
 end

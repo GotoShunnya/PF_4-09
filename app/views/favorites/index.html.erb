@@ -1,36 +1,37 @@
-<h1 class="favorite-heading">いいねした投稿一覧</h1>
+<h1 class="favorite-heading">いいねしたわがまま一覧</h1>
 <% @posts.each do |post| %>
-  <table class="favorite-table">
-    <thead>
-      <tr>
-        <th>投稿者</th>
-        <th>Title</th>
-        <% if post.image.present? %><!--present?で@postsのimageカラムの中身が存在するか確認。存在すれば表示する。-->
-          <th>Image</th>
-        <% end %>
-        <% if post.tag_list.present? %><!--present?で@postsのtag_listカラムの中身が存在するか確認。存在すれば表示する。-->
-          <th>tags</th>
-        <% end %>
-        <th>投稿日時</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= post.user.name %></td>
-        <td><%= link_to post.title, post_path(post.id) %></td>
-        <% if post.image.present? %>
-          <td><%= attachment_image_tag post, :image, format:"jpeg", size:"200x200" %></td>
-        <% end %>
-
-        <% if post.tag_list.present? %>
-          <td><%= render "posts/tag_list", tag_list: post.tag_list %></td>
-        <% end %>
-        <td><%= post.created_at.strftime("%Y/%m/%d %H:%M") %></td>
-      </tr>
-      <tr id = "post_<%= post.id %>">
-        <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: post %></td>
-        <td>コメント数<%= post.post_comments.count %></td></br>
-      </tr>
-    </tbody>
-  </table>
-  <% end %>
+  <div class="favorite-table-border">
+    <table class="favorite-table">
+      <thead>
+        <tr>
+          <th>投稿者</th>
+          <% if post.user.profile_image.present? %><!--present?で@postsのimageカラムの中身が存在するか確認。存在すれば表示する。-->
+            <th>プロフィール画像</th>
+          <% end %>
+          <th>タイトル</th>
+          <% if post.tag_list.present? %><!--present?で@postsのtag_listカラムの中身が存在するか確認。存在すれば表示する。-->
+            <th>tags</th>
+          <% end %>
+          <th>投稿日時</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= post.user.name %></td>
+          <% if post.user.profile_image.present? %>
+            <td><%= attachment_image_tag post.user, :profile_image, format:"jpeg", size:"100x100" %></td>
+          <% end %>
+          <td><%= link_to post.title, post_path(post.id) %></td>
+          <% if post.tag_list.present? %>
+            <td><%= render "posts/tag_list", tag_list: post.tag_list %></td>
+          <% end %>
+          <td><%= post.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+        </tr>
+        <tr id = "post_<%= post.id %>">
+          <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: post %></td>
+          <td>コメント数<%= post.post_comments.count %></td></br>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<% end %>

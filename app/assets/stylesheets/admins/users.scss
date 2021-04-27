@@ -89,7 +89,7 @@
 }
 
 .admin-mypage {
-  margin-right: 10%;
+  margin-right: 15px;
 }
 
 .admin-mypage-heading {
@@ -133,11 +133,23 @@
 }
 
 //マイページの一覧部分/
-.admin-mypost-heading {
+.admin-mypost {
+  margin: auto;
+  width: 100%;
   padding-top: 15px;
+}
+
+.admin-mypost-heading {
+  text-align: center;
+}
+
+.admin-mypost-table-border {
+  margin-bottom: 30px;
+  border: 10px inset;
 }
 
 .admin-mypost-table {
   text-align: center;
-  margin-bottom: 30px;
+  margin: auto;
+  width: 100%;
 }
