@@ -1,23 +1,24 @@
-<h1>お問い合わせフォーム</h1>
+<h1 class="inquiry-heading">お問い合わせフォーム</h1>
 <%= form_with model: @inquiry, url: inquiries_confirm_path, local: true do |f| %>
   <%= render "layouts/error_messages", model: f.object %>
-  <table>
+  <table class="inquiry-table">
     <thead>
       <tr>
-        <th>名前</th>
-        <td><%= f.text_field :name, value: current_user.name %></td>
+        <th class="inquiry-name">名前</th>
+        <td class="inquiry-name"><%= f.text_field :name, value: current_user.name %></td><!--valueに指定した引数がフォームに最初から入っている。-->
       </tr>
       <tr>
-        <th>メールアドレス</th>
-        <td><%= f.email_field :email, value: current_user.email %></td>
+        <th class="inquiry-email">メールアドレス</th>
+        <td class="inquiry-email"><%= f.email_field :email, value: current_user.email %></td><!--valueに指定した引数がフォームに最初から入っている。-->
       </tr>
       <tr>
-        <th>お問い合わせ内容</th>
-        <td><%= f.text_area :message %></td>
+        <th class="inquiry-body">お問い合わせ内容</th>
+        <td class="inquiry-body"><%= f.text_area :message, cols:"40", rows:"4" %></td>
       </tr>
       <tr>
-        <td><%= f.submit "確認" %></td>
+        <td class="inquiry-submit"><%= f.submit "送信内容を確認" %></td>
       </tr>
     </thead>
   </table>
 <% end %>
+<div class="inquiry-min-height"></div>

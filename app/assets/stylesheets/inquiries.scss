@@ -1,3 +1,110 @@
 // Place all the styles related to the Inquiries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//new//
+.inquiry-heading {
+  text-align: center;
+  padding: 15px 0 30px;
+}
+
+.inquiry-table {
+  margin: auto;
+  width: 40%;
+}
+
+.inquiry-name {
+  padding: 18px;
+}
+
+.inquiry-email {
+  @extend .inquiry-name;
+}
+
+.inquiry-body {
+  @extend .inquiry-name;
+}
+
+.inquiry-submit {
+  padding: 30px 15px 15px 15px;
+}
+
+.inquiry-min-height {
+  min-height: 199px;
+}
+//----------------------------------------------------------/
+
+//confirm/
+.confirm-heading {
+  text-align: center;
+  padding: 15px 0 30px;
+}
+
+.confirm-table {
+  margin: auto;
+  width: 40%;
+}
+
+.confirm-name {
+  padding: 15px;
+}
+
+.confirm-email {
+  @extend .confirm-name;
+}
+
+.confirm-body {
+  @extend .confirm-name;
+}
+
+.confirm-submit {
+  padding: 30px 15px 15px 15px;
+}
+
+.confirm-back {
+  margin-left: 70%;
+  padding: 40px 0 40px;
+}
+
+.confirm-min-height {
+  min-height: 197px;
+}
+//----------------------------------------------------------/
+
+//thanks/
+.thanks-heading {
+  text-align: center;
+  padding: 15px 0 30px;
+}
+
+.thank-message-1 {
+  text-align: center;
+  font-size: 40px;
+  padding: 20px;
+}
+
+.thank-message-2 {
+  font-size: 30px;
+  margin-left: 25%;
+}
+
+.thank-message-3 {
+  font-size: 30px;
+  margin-left: 55%;
+}
+
+.thanks-button-padding {
+  padding: 60px;
+}
+
+.thanks-button-index {
+  margin-left: 20%;
+}
+
+.thanks-button-show {
+  margin-left: 35%;
+}
+
+.thanks-min-height {
+  min-height: 178px;
+}

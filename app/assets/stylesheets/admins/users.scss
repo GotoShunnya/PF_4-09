@@ -1,3 +1,42 @@
 // Place all the styles related to the admins::users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//admin-log_in/
+  .log-in-heading {
+    margin-left: 22%;
+    padding: 40px;
+  }
+
+  .background-color {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 40px;
+    margin: 0 25% 0 25%;
+  }
+
+  .name-field {
+    margin-left: 31%;
+    padding: 30px;
+    color: #FFBEDA;
+  }
+
+  .password-field {
+    margin-left: 31%;
+    padding: 30px 30px 10px 30px;
+    color: #FFBEDA;
+  }
+
+  .remember-me-field {
+    margin-left: 30%;
+    padding: 40px 40px 10px 40px;
+    color: #FFBEDA;
+  }
+
+  .log-in-button {
+    margin-left: 49%;
+    padding-left: 40px;
+  }
+
+  .log-in-min-height { //高さの最小値を設定/
+    min-height: 146px;
+  }
