@@ -9,8 +9,8 @@ class PostsController < ApplicationController
     if params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}").order(created_at: :desc).page(params[:page]).reverse_order
     else
-      @posts = Post.page(params[:page]).reverse_order.order(created_at: :desc) #ページネーション記述位置注意。この記述で適応された。
-    end       #1ページで決められた件数だけを、新しく取得する
+      @posts = Post.page(params[:page]).reverse_order.order(created_at: :desc) # ページネーション記述位置注意。この記述で適応された。
+    end # 1ページで決められた件数だけを、新しく取得する
   end
 
   def create
@@ -38,8 +38,8 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
     params.require(:post).permit(:title, :body, :image, :tag_list)
   end
-
 end

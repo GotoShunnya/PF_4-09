@@ -1,3 +1,50 @@
 // Place all the styles related to the admins::posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//show/
+.admin-show-heading {
+  text-align: center;
+  padding: 15px 15px;
+}
+
+.admin-show-table {
+  margin: auto;
+  width: 80%;
+}
+
+.admin-show-title {
+  text-align: center;
+}
+
+.admin-show-body {
+  @extend .admin-show-title;
+}
+
+.admin-show-image {
+  @extend .admin-show-title;
+}
+
+.admin-show-tag {
+  @extend .admin-show-title;
+}
+
+.admin-show-favorite-count {
+  font-size: 20px;
+}
+
+.admin-show-destroy {
+  margin-left: 80%;
+  padding: 20px;
+}
+
+.admin-show-comment {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.admin-comment-content {
+  font-size: 20px;
+  margin-left: 30%;
+  padding: 20px;
+}

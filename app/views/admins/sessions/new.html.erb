@@ -1,7 +1,7 @@
 <h2 class="log-in-heading">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="background-color">
+  <div class="admin-log-in-background-color">
     <div class="name-field">
       <%= f.label :name %><br />
       <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
