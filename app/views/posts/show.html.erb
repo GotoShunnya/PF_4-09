@@ -4,13 +4,13 @@
   <table class="show-table">
      <thead>
        <tr>
-         <th class="show-title">Title</th>
-         <th class="show-body">Body</th>
+         <th class="show-title">タイトル</th>
+         <th class="show-body">内容</th>
          <% if @post.image.present? %><!--present?で@postsのimageカラムの中身が存在するか確認。存在すれば表示する。-->
-           <th class="show-image">Image</th>
+           <th class="show-image">画像</th>
          <% end %>
          <% if @post.tag_list.present? %>
-           <th class="show-tag">tag</th>
+           <th class="show-tag">タグ</th>
          <% end %>
        </tr>
      </thead>
