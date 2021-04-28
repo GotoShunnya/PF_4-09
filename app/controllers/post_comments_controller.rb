@@ -7,8 +7,9 @@ class PostCommentsController < ApplicationController
     @post_comment = current_user.post_comments.new(post_comment_params)
     @post_comment.post_id = @post.id
     if @post_comment.save
-      redirect_to post_path(@post)
+      redirect_to post_path(@post), notice: "コメントが保存されました。"
     else
+      flash.now[:alert] = "コメントの保存に失敗しました。"
       render "posts/show"
     end
   end

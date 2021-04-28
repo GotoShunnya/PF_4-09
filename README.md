@@ -31,12 +31,12 @@
 ## 設計書
 
 - ワイヤーフレーム（https://app.diagrams.net/#G1Gq0FXSYtf13prVQxhUV7zrveXEKDCmVP）
-- テーブル定義書（https://docs.google.com/spreadsheets/d/1153DATd9mx1yIMA8WWXYRsMzBt0O-4irFR1Z0YyMGww/edit#gid=1383204039）
+- テーブル定義書（https://app.diagrams.net/#G1lppb4iZIkwRCG9YF2AI1CyNgyKFPWlkA）
 - アプリケーション詳細設計（https://docs.google.com/spreadsheets/d/1CX_U2AwAL855eSuhW1oVbwsJ-8OtR2FjCSuPMu0jRMw/edit#gid=0）
 
 ## 機能一覧
 
-https://docs.google.com/spreadsheets/d/13lsc5VqlFZrab47h8hj8umTrXQUMThg53_1Sy0Py_Xs/edit#gid=0
+(https://docs.google.com/spreadsheets/d/13lsc5VqlFZrab47h8hj8umTrXQUMThg53_1Sy0Py_Xs/edit#gid=0)
 
 ## 開発環境
 
@@ -48,7 +48,5 @@ https://docs.google.com/spreadsheets/d/13lsc5VqlFZrab47h8hj8umTrXQUMThg53_1Sy0Py
 
 ## 使用素材
 
-・画像：いらすとや
-
-- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名と URL を明記してください。
-- 使用しない場合は、使用素材の項目を README から削除してください。
+・画像：PAKUTASO (フリー素材)
+        url(https://www.pakutaso.com/)

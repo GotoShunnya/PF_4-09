@@ -3,13 +3,13 @@
 <table class="admin-show-table">
    <thead>
      <tr>
-       <th class="admin-show-title">Title</th>
-       <th class="admin-show-body">Body</th>
+       <th class="admin-show-title">タイトル</th>
+       <th class="admin-show-body">内容</th>
        <% if @post.image.present? %>
-       <th class="admin-show-image">Image</th>
+       <th class="admin-show-image">イメージ</th>
        <% end %>
        <% if @post.tag_list.present? %>
-       <th class="admin-show-tag">tag</th>
+       <th class="admin-show-tag">タグ</th>
        <% end %>
      </tr>
    </thead>
@@ -45,3 +45,7 @@
   <button><%= link_to "コメントを削除", admins_post_post_comment_path(post_comment.post, post_comment), method: :delete %></button></p>
 </div>
 <% end %>
+
+<div class="admin-show-back">
+  <button><%= link_to "ユーザ詳細に戻る", admins_user_path(@post.user) %></button>
+</div>

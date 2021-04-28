@@ -8,8 +8,9 @@ class Admins::PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     if @post.destroy
-      redirect_to admins_user_path(@post.user.id) # 削除する投稿に紐づいたユーザの詳細ページへ
+      redirect_to admins_user_path(@post.user.id), notice: "投稿を削除しました。" # 削除する投稿に紐づいたユーザの詳細ページへ
     else
+      flash.now[:alert] = "投稿の削除に失敗しました。"
       render :show
     end
   end

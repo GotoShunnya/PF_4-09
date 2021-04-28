@@ -1,36 +1,37 @@
-<h1 class="confirm-heading">確認画面</h1>
-<table class="confirm-table">
-  <%= form_with model: @inquiry, url: inquiries_thanks_path, local: true do |f| %>
-  <thead>
-    <tr>
-      <th class="confirm-name">名前</th>
-      <th><%= f.hidden_field :name %></th>
-      <th class="confirm-name"><%= @inquiry.name %></th>
-    </tr>
-    <tr>
-      <th class="confirm-email">メールアドレス</th>
-      <th><%= f.hidden_field :email %></th>
-      <th class="confirm-email"><%= @inquiry.email %></th>
-    </tr>
-    <tr>
-      <th class="confirm-body">お問い合わせ内容</th>
-      <th><%= f.hidden_field :message %></th>
-      <th class="confirm-body"><%= @inquiry.message %></th>
-    </tr>
-    <tr>
-      <th class="confirm-submit"><%= f.submit "内容を送信する" %></th>
-    </tr>
-  </tbody>
+<div class="confirm-background-color">
+  <h1 class="confirm-heading">確認画面</h1>
+  <table class="confirm-table">
+    <%= form_with model: @inquiry, url: inquiries_thanks_path, local: true do |f| %>
+    <thead>
+      <tr>
+        <th class="confirm-name">名前</th>
+        <th><%= f.hidden_field :name %></th>
+        <th class="confirm-name"><%= @inquiry.name %></th>
+      </tr>
+      <tr>
+        <th class="confirm-email">メールアドレス</th>
+        <th><%= f.hidden_field :email %></th>
+        <th class="confirm-email"><%= @inquiry.email %></th>
+      </tr>
+      <tr>
+        <th class="confirm-body">お問い合わせ内容</th>
+        <th><%= f.hidden_field :message %></th>
+        <th class="confirm-body"><%= @inquiry.message %></th>
+      </tr>
+      <tr>
+        <th class="confirm-submit"><%= f.submit "内容を送信する" %></th>
+      </tr>
+    </tbody>
   <% end %>
-</table>
+  </table>
 
-<%= form_with model: @inquiry, url: inquiries_back_path, local: true do |f| %><!--newページに戻る用のhidden_field-->
-  <%= f.hidden_field :name %>
-  <%= f.hidden_field :email %>
-  <%= f.hidden_field :message %>
-  <div class="confirm-back">
-    <%= f.submit "入力画面に戻る" %>
-  </div>
-<% end %>
-<div class="confirm-min-height"></div>
-
+  <%= form_with model: @inquiry, url: inquiries_back_path, local: true do |f| %><!--newページに戻る用のhidden_field-->
+    <%= f.hidden_field :name %>
+    <%= f.hidden_field :email %>
+    <%= f.hidden_field :message %>
+    <div class="confirm-back">
+      <%= f.submit "入力画面に戻る" %>
+    </div>
+  <% end %>
+  <div class="confirm-min-height"></div>
+</div>

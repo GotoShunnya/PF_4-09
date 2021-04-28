@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //new//
+.inquiry-background-color {
+  background-color: #FFFFEE;
+}
+
 .inquiry-heading {
   text-align: center;
   padding: 15px 0 30px;
@@ -35,6 +39,10 @@
 //----------------------------------------------------------/
 
 //confirm/
+.confirm-background-color {
+  background-color: #CCFFCC;
+}
+
 .confirm-heading {
   text-align: center;
   padding: 15px 0 30px;
@@ -72,6 +80,16 @@
 //----------------------------------------------------------/
 
 //thanks/
+.thanks-background-image {
+  background-image: image-url("Photoelly000_TP_V.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.thanks-background-text {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .thanks-heading {
   text-align: center;
   padding: 15px 0 30px;
@@ -81,16 +99,19 @@
   text-align: center;
   font-size: 40px;
   padding: 20px;
+  color: #FFEEFF;
 }
 
 .thank-message-2 {
   font-size: 30px;
   margin-left: 25%;
+  color: #FFEEFF;
 }
 
 .thank-message-3 {
   font-size: 30px;
   margin-left: 55%;
+  color: #FFEEFF;
 }
 
 .thanks-button-padding {

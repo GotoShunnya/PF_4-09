@@ -3,37 +3,42 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //index/
+.index-background-color {
+  background-color: #FFFFEE;
+}
+
 .index-heading {
    text-align: center;
-   padding-top: 15px;
+   padding-top: 30px;
 }
 
 .search-count {
   text-align: center;
-  padding-top: 15px;
+  padding-bottom: 20px;
   font-size: 150%;
 }
 
 .search {
   text-align: center;
-  padding-top: 15px;
+  padding-bottom: 30px;
+}
+
+.index-table-border {
+  margin: auto;
+  margin-bottom: 30px;
+  width: 80%;
+  border: 10px outset #333399;
 }
 
 .index-table {
-  margin: 4% 25% 4%25%;
-  border: 10px outset;
-}
-
-.table-text {
   text-align: center;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 20px;
+  margin: auto;
+  width: 100%;
 }
 
 .paginate {
   margin-left: 45%;
-  padding-bottom: 15px;
+  padding-bottom: 30px;
   font-size: 20px;
 
   a {   //ページネーションのリンク/
@@ -43,6 +48,10 @@
 //----------------------------------------------------------//
 
 //new/
+.new-background-color {
+  background-color: #FFFFEE;
+}
+
 .new-heading {
   text-align: center;
   padding-top: 15px;
@@ -64,6 +73,10 @@
   @extend .new-title;
 }
 
+.tag-caution {
+  padding-bottom: 40px;
+}
+
 .new-image {
   @extend .new-title;
 }
@@ -78,12 +91,13 @@
   padding-bottom: 15px;
 }
 
-.new-min-height {
-  min-height: 47px;
-}
 //----------------------------------------------------------/
 
 //show/
+.show-background-color {
+  background-color: #FFFFEE;
+}
+
 .show-heading {
   text-align: center;
   padding: 15px 15px;
@@ -118,7 +132,8 @@
 //comment/
 .show-comment {
   text-align: center;
-  padding-bottom: 20px;
+  padding: 20px 20px;
+  border-top: 10px outset #E9E5FF;
 }
 
 .comment-content {

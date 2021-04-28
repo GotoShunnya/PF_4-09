@@ -1,4 +1,4 @@
-<div class="background-color">
+<div class="index-background-color">
   <% if params[:tag_name] %><!--paramsでtag_nameが渡されているか。渡されなければelseへ-->
     <h1 class="index-heading">わがままタグ検索</h1>
     <div class="search-count">
@@ -13,8 +13,8 @@
   </div>
 
   <% @posts.each do |post| %>
-  <div class="index-table">
-    <table class="table-text">
+  <div class="index-table-border">
+    <table class="index-table">
       <thead>
         <tr>
           <th>投稿者</th>
@@ -23,7 +23,7 @@
           <% end %>
           <th>タイトル</th>
           <% if post.tag_list.present? %><!--present?で@postsのtag_listカラムの中身が存在するか確認。存在すれば表示する。-->
-            <th>tags</th>
+            <th>タグ</th>
           <% end %>
           <th>投稿日時</th>
         </tr>
