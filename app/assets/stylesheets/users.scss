@@ -197,7 +197,11 @@ h6 {
 //----------------------------------------------------------/
 
 //show・プロフィール部分/
-.container {
+.mypage-background-color {
+  background-color: #FFFFEE;
+}
+
+.display {
   display: flex;
   margin: auto;
   width: 80%;
@@ -213,7 +217,7 @@ h6 {
 }
 
 .mypage-table {
-  border: 8px inset;
+  border: 10px outset #CCCCCC;
 }
 
 .mypage-name {
@@ -269,7 +273,7 @@ h6 {
 
 .mypost-table-border {
   margin-bottom: 30px;
-  border: 10px inset;
+  border: 10px outset #333399;
 }
 
 .mypost-table {
@@ -281,6 +285,10 @@ h6 {
 //----------------------------------------------------------//
 
 //edit/
+.edit-background-color {
+  background-color: #FFFFEE;
+}
+
 .edit-heading {
   text-align: center;
   padding-top: 15px;

@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post.id), notice: "投稿が保存されました。"
     else
-      flash.now[:alert] = "投稿の保存に失敗しました" #flashメッセージが引き継がれてしまうことを防ぐため、1回だけ表示させるflash.nowを使用
+      flash.now[:alert] = "投稿の保存に失敗しました" # flashメッセージが引き継がれてしまうことを防ぐため、1回だけ表示させるflash.nowを使用
       render :new
     end
   end

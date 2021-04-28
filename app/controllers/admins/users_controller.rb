@@ -13,7 +13,7 @@ class Admins::UsersController < ApplicationController
   def update
     @user = User.find(params[:id]) # @userに対象のuserの情報をを入れ
     if @user.update(user_params) # @userのis_deletedをtrueにupdate
-    redirect_to admins_users_path, notice: "ステータスの更新に成功いたしました。"
+      redirect_to admins_users_path, notice: "ステータスの更新に成功いたしました。"
     else
       @posts = @user.posts.order(created_at: :desc)
       flash.now[:alert] = "ステータスの更新に失敗しました。"

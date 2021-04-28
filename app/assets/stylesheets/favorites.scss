@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //いいねした投稿一覧/
+.favorite-background-color {
+  background-color: #FFFFEE;
+}
+
 .favorite-heading {
   text-align: center;
   padding-top: 15px;
@@ -11,8 +15,8 @@
 .favorite-table-border {
   margin: auto;
   width: 80%;
-  margin-bottom: 30px;
-  border: 10px inset;
+  margin-top: 30px;
+  border: 10px outset #333399;
 }
 
 .favorite-table {

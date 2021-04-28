@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //index/
+.index-background-color {
+  background-color: #FFFFEE;
+}
+
 .index-heading {
    text-align: center;
    padding-top: 30px;
@@ -23,7 +27,7 @@
   margin: auto;
   margin-bottom: 30px;
   width: 80%;
-  border: 10px outset;
+  border: 10px outset #333399;
 }
 
 .index-table {
@@ -44,6 +48,10 @@
 //----------------------------------------------------------//
 
 //new/
+.new-background-color {
+  background-color: #FFFFEE;
+}
+
 .new-heading {
   text-align: center;
   padding-top: 15px;
@@ -65,6 +73,10 @@
   @extend .new-title;
 }
 
+.tag-caution {
+  padding-bottom: 40px;
+}
+
 .new-image {
   @extend .new-title;
 }
@@ -79,12 +91,13 @@
   padding-bottom: 15px;
 }
 
-.new-min-height {
-  min-height: 52px;
-}
 //----------------------------------------------------------/
 
 //show/
+.show-background-color {
+  background-color: #FFFFEE;
+}
+
 .show-heading {
   text-align: center;
   padding: 15px 15px;
@@ -120,7 +133,7 @@
 .show-comment {
   text-align: center;
   padding: 20px 20px;
-  border-top: 2px solid;
+  border-top: 10px outset #E9E5FF;
 }
 
 .comment-content {
