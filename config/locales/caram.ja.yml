@@ -1,0 +1,30 @@
+ja:
+  activerecord:
+    models:
+      user:
+      post:
+      post_comment:
+      inquiry:
+
+    attributes:
+      user:
+        name: 名前
+        name_kana: かな
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード(確認)
+        introduction: 自己紹介文
+        profile_image_id: プロフィール画像
+        phone_number: 電話番号
+
+      post:
+        title: タイトル
+        body: 内容
+
+      post_comment:
+        comment: コメント
+
+      inquiry:
+        name: 名前
+        email: メールアドレス
+        message: メッセージ
