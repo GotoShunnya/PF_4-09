@@ -17,7 +17,6 @@ module PF
     # the framework and any gems in your application.
     config.time_zone = "Asia/Tokyo" #日本時間に設定
     config.i18n.default_locale = :ja #エラーメッセージ日本語化
-    #.ymlにカラムやdeviseの日本語の定義をすれば、日本語で表示される。今回は実装しない。(githubなどにソースコードあり。)
 
   end
 end

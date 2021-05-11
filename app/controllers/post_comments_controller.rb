@@ -15,8 +15,14 @@ class PostCommentsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:post_id])
+    
     PostComment.find_by(id: params[:id], post_id: params[:post_id]).destroy
-    redirect_back(fallback_location: root_path)
+    if redirect_to post_path(@post), notice: "コメントを削除しました。"
+
+    else
+      flash.now[:alert] = "コメントの削除に失敗しました。 再度実行してください。"
+    end
   end
 
   private
