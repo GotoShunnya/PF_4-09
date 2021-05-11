@@ -32,8 +32,9 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     if @post.destroy
-      redirect_to posts_path
+      redirect_to posts_path, notice: "投稿を削除しました。"
     else
+      flash.now[:alert] = "投稿の削除に失敗しました。 再度実行してください。"
       render :show
     end
   end
