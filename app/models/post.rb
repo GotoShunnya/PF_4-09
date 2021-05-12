@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   acts_as_taggable
 
   validates :title, length: { minimum: 5 }
-  validates :body, length: { in: 20..100 }
+  validates :body, length: { in: 20..200 }
 
   def favorited_by?(user) # 引数で渡されたユーザidが、favoritesテーブルに存在するかを調べるメソッドを作成
     favorites.where(user_id: user.id).exists?

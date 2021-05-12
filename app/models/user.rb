@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   validates :name, uniqueness: true, length: { in: 2..10 } # 2~10文字以内で保存、一意性を持たせる。
   validates :name_kana, length: { in: 2..20 }
-  validates :introduction, length: { in: 5..200 }
+  validates :introduction, length: { in: 5..100 }
   validates :phone_number, presence: true, uniqueness: true
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze # メールアドレスの正規表現の定義
