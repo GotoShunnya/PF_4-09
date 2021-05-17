@@ -4,7 +4,6 @@
     <title>PF</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -68,11 +67,16 @@
 
     <%= yield %>
   </body>
+
   <footer>
-    <div>Copyrihgt © 2021 ××××××</div>
-    <div>サイト制作者: Shunnya Goto</div>
-    <div>住所: 〇〇県　〇〇市　〇〇〇〇〇</div>
-    <a href="users/about">｜当サイトのご説明｜</a>
-    <a href="inquiries/new">｜お問い合わせフォーム｜</a>
+    <div class="container">
+      <div class="row">
+        <a class="col-6 col-lg-3 text-center" href="users/about">｜当サイトのご説明｜</a>
+        <a class="col-6 col-lg-3 text-center" href="inquiries/new">｜お問い合わせフォーム｜</a>
+        <div class="col-6 col-lg-3 text-center">サイト制作者: Shunnya Goto</div>
+        <div class="col-6 col-lg-3 text-center">住所: 〇〇県　〇〇市　〇〇〇〇〇</div>
+        <div class="col-12 col-lg-12 text-center">Copyrihgt © 2021 ××××××</div>
+      </div>
+    </div>
   </footer>
 </html>
