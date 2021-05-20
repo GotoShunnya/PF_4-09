@@ -120,6 +120,7 @@
 .show-body {
   display: inline-block;
   text-align: left;
+  @extend .show-title;
 }
 
 .show-image {
