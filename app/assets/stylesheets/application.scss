@@ -18,16 +18,16 @@
  @import "font-awesome";
 
 /*ブラウザ特有のCSSを解除する「リセットCSS」*/
- * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
- }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /*フォントの指定*/
- body {
-   font-family: Georgia, serif;
- }
+body {
+  font-family: Georgia, serif;
+}
 
 .navber-brand { //headerのtop画面に遷移する「OPEN」アイコン。/
   background-image: image-url("0127035006.jpg");
@@ -36,46 +36,51 @@
   width: 60px;
  }
 
- footer {
-   background-color: #EEEEEE;
-   display: flex;
-   justify-content: space-between;
-   padding: 25px 0 25px;
-   min-height: 70px;
+.log-in-user {
+  margin-left: 6%;
+  color: #2E8B57;
+}
 
-   a { //footerのリンク/
-     color: #333;
-   }
+footer {
+  background-color: #EEEEEE;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 0 25px;
+  min-height: 70px;
 
-   a:hover { //ポインターを合わせると動作する/
-     color: #222222;
-   }
- }
+  a { //footerのリンク/
+    color: #333;
+  }
 
-  .errors_heading { //エラーメッセージ/
-    background-color: rgba(0, 0, 0, 0.5);
+  a:hover { //ポインターを合わせると動作する/
+    color: #222222;
+  }
+}
+
+.errors_heading { //エラーメッセージ/
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: auto;
+  width: 60%;
+
+  .errors-ul {
     margin: auto;
     width: 60%;
-
-    .errors-ul {
-      margin: auto;
-      width: 60%;
-      padding: 10px 0 10px;
-      color: #FFDDFF;
-    }
+    padding: 10px 0 10px;
+    color: #FFDDFF;
   }
+}
 
-  .flash { //deviceのflashメッセージのカラー設定。キーを2つ設定しているので、noticeとalertの2色を設定/
-    color: $white;
-    text-align: center;
-    &_alert {
-      background-color: red;
-    }
-    &_notice {
-      background-color: $green;
-    }
+.flash { //deviceのflashメッセージのカラー設定。キーを2つ設定しているので、noticeとalertの2色を設定/
+  color: $white;
+  text-align: center;
+  &_alert {
+    background-color: red;
   }
+  &_notice {
+    background-color: $green;
+  }
+}
 
-  button {
-    padding: 5px;
-  }
+button {
+  padding: 5px;
+}
