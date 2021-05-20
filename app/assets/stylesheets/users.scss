@@ -26,7 +26,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     color: #EEEEEE;
     text-align: center;
-    padding: 11% 0 1%;
+    padding-top: 9%;
   }
 }
 
@@ -81,29 +81,31 @@ li {
   padding: 15px 0 0 10%;
 }
 
-.about-item {
+.about-container {
   text-align: center;
-  padding: 2%;
+}
+
+.about-item {
+text-align: center;
+padding: 2%;
 }
 
 .about-content1 {
-  margin-left: 15%;
-  padding: 10px;
+  display: inline-block;
+  text-align: left;
 }
 
 .about-content2 {
-  margin-left: 15%;
-  padding: 10px;
+  @extend .about-content1;
 }
 
 .about-content3 {
-  text-align: center;
-  padding: 10px;
+  @extend .about-content1;
 }
 
 .about-content4 {
-  text-align: center;
-  padding: 10px 0 35px;
+  @extend .about-content1;
+  padding-bottom: 35px;
 }
 //----------------------------------------------------------/
 
