@@ -100,20 +100,26 @@
 
 .show-heading {
   text-align: center;
-  padding: 15px 15px;
+  padding-top: 15px;
 }
 
 .show-table {
+  text-align: center;
   margin: auto;
-  width: 80%;
+  width: 55%;
 }
 
 .show-title {
-  text-align: center;
+  padding-top: 10px;
+}
+
+.show-body-title {
+  @extend .show-title;
 }
 
 .show-body {
-  @extend .show-title;
+  display: inline-block;
+  text-align: left;
 }
 
 .show-image {
@@ -122,6 +128,11 @@
 
 .show-tag {
   @extend .show-title;
+}
+
+.favorite_btn {
+  position: absolute;
+  right: 17%;
 }
 
 .show-destroy {
