@@ -30,7 +30,7 @@
             <td><%= date.created_at.strftime("%Y/%m/%d %H:%M") %></td>
           </tr>
           <tr id= "post_<%= date.id %>">
-            <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: date %></td>
+            <td class = "favorite-btn"><%= render "favorites/favorite-btn", post: date %></td>
             <td>コメント数<%= date.post_comments.count %></td></br>
           </tr>
         </tbody>
