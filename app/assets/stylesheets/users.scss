@@ -225,11 +225,11 @@ padding: 2%;
 
 .mypage-table {
   border: 8px outset #CCCCCC;
+  text-align: center;
 }
 
 .mypage-name {
   font-size: 18px;
-  text-align: center;
   padding-top: 15px;
 }
 
@@ -243,6 +243,12 @@ padding: 2%;
 
 .mypage-introduction {
   @extend .mypage-name;
+}
+
+.mypage-introduction-body {
+  display: inline-block;
+  text-align: left;
+  font-size: 18px;
 }
 
 .mypage-profile-image {

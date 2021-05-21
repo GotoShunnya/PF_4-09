@@ -16,8 +16,11 @@
             </th>
           </tr>
           <tr>
-            <th class="mypage-introduction">
-              ◆自己紹介文<br> <%= @user.introduction %>
+            <th class="mypage-introduction">◆自己紹介文</th><!--introductionのみ左寄せ中央揃えにするため別にtrを作成。-->
+          </tr>
+          <tr>
+            <th class="mypage-introduction-body">
+              <%= @user.introduction %>
             </th>
           </tr>
           <tr>
