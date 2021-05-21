@@ -6,22 +6,34 @@
       <table class="mypage-table">
         <thead>
           <tr>
-            <th class="mypage-name">名前（ニックネーム）<%= @user.name %></th>
+            <th class="mypage-name">
+              ◆名前（ニックネーム）<br><%= @user.name %>
+            </th>
           </tr>
           <tr>
-            <th class="mypage-kana">かな <%= @user.name_kana %></th>
+            <th class="mypage-kana">
+              ◆かな <br><%= @user.name_kana %>
+            </th>
           </tr>
           <tr>
-            <th class="mypage-introduction">自己紹介文 <%= @user.introduction %></th>
+            <th class="mypage-introduction">
+              ◆自己紹介文<br> <%= @user.introduction %>
+            </th>
           </tr>
           <tr>
-            <th class="mypage-profile-image">プロフィール写真 <%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", format:"jpeg", size:"90x90" %></th>
+            <th class="mypage-profile-image">
+              ◆プロフィール写真 <br><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", format:"jpeg", size:"90x90" %>
+            </th>
           </tr>
           <tr>
-            <th class="mypage-email">メールアドレス <%= @user.email %></th>
+            <th class="mypage-email">
+              ◆メールアドレス<br> <%= @user.email %>
+            </th>
           </tr>
           <tr>
-            <th class="mypage-phone-number">電話番号 <%= @user.phone_number %></th>
+            <th class="mypage-phone-number">
+              ◆電話番号 <br><%= @user.phone_number %>
+            </th>
           </tr>
         </thead>
         <tfoot colspan="2">
@@ -41,7 +53,8 @@
     </div>
 
     <div class="mypost">
-      <h1 class="mypost-heading">ご自身が投稿した「わがまま」一覧</h1>
+      <h1 class="mypost-heading1">ご自身が投稿した</h1>
+      <h1 class="mypost-heading2">「わがまま」一覧</h1>
 
       <% @posts.each do |post| %>
       <div class="mypost-table-border">
@@ -71,11 +84,13 @@
               <% end %>
               <td><%= post.created_at.strftime("%Y/%m/%d %H:%M") %></td>
             </tr>
+          </tbody>
+          <tfoot>
             <tr id= "post_<%= post.id %>">
-              <td class = "favorite-btn"><%= render "favorites/favorite-btn", post: post %></td></br>
+              <td class = "favorite_btn"><%= render "favorites/favorite-btn", post: post %></td></br>
               <td>コメント数<%= post.post_comments.count %></td>
             </tr>
-          </tbody>
+          </tfoot>
         </table>
       </div>
     <% end %>

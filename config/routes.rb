@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   }
 
   root to: "users#top"
-  get "users/about"
+  get "users/about" => "users#about"
   get "users/leave"
   patch "users/withdraw"
 

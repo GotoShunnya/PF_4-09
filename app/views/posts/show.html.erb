@@ -32,9 +32,14 @@
         </tr>
       <% end %>
     </thead>
+  </table>
+
+  <table class="show-favorite"><!--scss適応時不都合が生じたため、個別でテーブル作成-->
     <tbody>
-      <tr id="post_<%= @post.id %>">
-        <td class = "show-favorite-btn"><%= render "favorites/favorite-btn", post: @post %></td>
+      <tr>
+        <th id="post_<%= @post.id %>">
+           <div class ="favorite_btn"><%= render "favorites/favorite-btn", post: @post %><div>
+        </th>
       </tr>
     </tbody>
   </table>
