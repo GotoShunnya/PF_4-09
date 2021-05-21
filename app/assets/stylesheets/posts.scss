@@ -104,12 +104,12 @@
 }
 
 .show-table {
-  text-align: center;
   margin: auto;
-  width: 55%;
+  width: 49%;
 }
 
 .show-title {
+  text-align: center;
   padding-top: 10px;
 }
 
@@ -131,9 +131,8 @@
   @extend .show-title;
 }
 
-.show-favorite-btn {
-  position: absolute;
-  right: 17%;
+.show-favorite {
+  margin-left: 12%;
 }
 
 .show-destroy {

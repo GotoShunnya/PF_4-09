@@ -210,11 +210,12 @@ padding: 2%;
 .display {
   display: flex;
   margin: auto;
-  width: 80%;
+  width: 95%;
 }
 
 .mypage {
   margin-right: 15px;
+  width: 38%;
 }
 
 .mypage-heading {
@@ -223,12 +224,13 @@ padding: 2%;
 }
 
 .mypage-table {
-  border: 10px outset #CCCCCC;
+  border: 8px outset #CCCCCC;
 }
 
 .mypage-name {
   font-size: 18px;
-  padding: 15px 0 0 5px;
+  text-align: center;
+  padding-top: 15px;
 }
 
 .mypage-kana {
@@ -273,8 +275,12 @@ padding: 2%;
   padding-top: 15px;
 }
 
-.mypost-heading {
-  text-align: center;
+.mypost-heading1 {
+  padding-left: 15%;
+}
+
+.mypost-heading2 {
+  padding-left: 38%;
 }
 
 .mypost-table-border {
@@ -287,7 +293,6 @@ padding: 2%;
   margin: auto;
   width: 100%;
 }
-
 //----------------------------------------------------------//
 
 //edit/
