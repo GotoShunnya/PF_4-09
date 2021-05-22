@@ -82,14 +82,15 @@
 //----------------------------------------------------------/
 
 //show・プロフィール部分/
-.admin-container {
+.admin-display {
   display: flex;
   margin: auto;
-  width: 80%;
+  width: 95%;
 }
 
 .admin-mypage {
   margin-right: 15px;
+  width: 38%;
 }
 
 .admin-mypage-heading {
@@ -100,6 +101,7 @@
 .admin-mypage-table {
   border: 8px inset;
   margin-bottom: 32px;
+  text-align: center;
 }
 
 .admin-mypage-name {
@@ -115,6 +117,11 @@
   @extend .admin-mypage-name
 }
 
+.admin-introduction-body {
+  display: inline-block;
+  text-align: left;
+}
+
 .admin-mypage-profile-image {
   @extend .admin-mypage-name
 }
@@ -128,9 +135,8 @@
 }
 
 .admin-mypage-status {
-  text-align: center;
   font-size: 20px;
-  padding: 10px 10px;
+  padding: 30px 0 30px;
 }
 
 //マイページの一覧部分/
