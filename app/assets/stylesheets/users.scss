@@ -207,7 +207,7 @@ padding: 2%;
   background-color: #FFFFEE;
 }
 
-.display {
+.mypage-display {
   display: flex;
   margin: auto;
   width: 95%;
@@ -261,7 +261,11 @@ padding: 2%;
 
 .mypage-phone-number {
   @extend .mypage-name;
-  padding-bottom: 15px;
+}
+
+.mypage-phone-number-body {
+  font-size: 18px;
+  padding-bottom: 30px;
 }
 
 .mypage-button {

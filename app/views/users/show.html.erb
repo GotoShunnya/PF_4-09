@@ -1,19 +1,21 @@
 <div class="mypage-background-color">
-  <div class="display">
+  <div class="mypage-display">
     <div class="mypage">
       <h1 class="mypage-heading">マイページ</h1>
 
       <table class="mypage-table">
         <thead>
           <tr>
-            <th class="mypage-name">
-              ◆名前（ニックネーム）<br><%= @user.name %>
-            </th>
+            <th class="mypage-name">◆名前（ニックネーム）</th>
           </tr>
           <tr>
-            <th class="mypage-kana">
-              ◆かな <br><%= @user.name_kana %>
-            </th>
+            <th><%= @user.name %></th>
+          </tr>
+          <tr>
+            <th class="mypage-kana">◆かな </th>
+          </tr>
+          <tr>
+            <th><%= @user.name_kana %></th>
           </tr>
           <tr>
             <th class="mypage-introduction">◆自己紹介文</th><!--introductionのみ左寄せ中央揃えにするため別にtrを作成。-->
@@ -24,19 +26,22 @@
             </th>
           </tr>
           <tr>
-            <th class="mypage-profile-image">
-              ◆プロフィール写真 <br><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", format:"jpeg", size:"90x90" %>
-            </th>
+            <th class="mypage-profile-image">◆プロフィール写真</th>
           </tr>
           <tr>
-            <th class="mypage-email">
-              ◆メールアドレス<br> <%= @user.email %>
-            </th>
+            <th><%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg", format:"jpeg", size:"90x90" %></th>
           </tr>
           <tr>
-            <th class="mypage-phone-number">
-              ◆電話番号 <br><%= @user.phone_number %>
-            </th>
+            <th class="mypage-email">◆メールアドレス</th>
+          </tr>
+          <tr>
+            <th><%= @user.email %></th>
+          </tr>
+          <tr>
+            <th class="mypage-phone-number">◆電話番号</th>
+          </tr>
+          <tr>
+            <th class="mypage-phone-number-body"><%= @user.phone_number %></th>
           </tr>
         </thead>
         <tfoot colspan="2">
