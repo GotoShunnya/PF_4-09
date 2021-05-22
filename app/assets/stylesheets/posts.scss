@@ -120,7 +120,7 @@
 .show-body {
   display: inline-block;
   text-align: left;
-  @extend .show-title;
+  padding-top: 10px;
 }
 
 .show-image {
