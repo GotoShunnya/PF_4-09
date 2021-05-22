@@ -10,15 +10,22 @@
 
 .admin-show-table {
   margin: auto;
-  width: 80%;
+  width: 49%;
 }
 
 .admin-show-title {
   text-align: center;
+  padding-top: 10px;
 }
 
-.admin-show-body {
+.admin-show-body1 {
   @extend .admin-show-title;
+}
+
+.admin-show-body2 {
+  display: inline-block;
+  text-align: left;
+  padding-top: 10px;
 }
 
 .admin-show-image {
@@ -31,6 +38,7 @@
 
 .admin-show-favorite-count {
   font-size: 20px;
+  margin-left: 12%;
 }
 
 .admin-show-destroy {

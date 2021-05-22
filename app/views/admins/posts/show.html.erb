@@ -1,34 +1,48 @@
 <h1 class="admin-show-heading">投稿詳細</h1>
 
 <table class="admin-show-table">
-   <thead>
-     <tr>
-       <th class="admin-show-title">タイトル</th>
-       <th class="admin-show-body">内容</th>
-       <% if @post.image.present? %>
-       <th class="admin-show-image">イメージ</th>
-       <% end %>
-       <% if @post.tag_list.present? %>
-       <th class="admin-show-tag">タグ</th>
-       <% end %>
-     </tr>
-   </thead>
-   <tbody>
-     <tr>
-       <td class="admin-show-title"><%= @post.title %></td>
-       <td class="admin-show-body"><%= @post.body %></td>
-       <% if @post.image.present? %>
-         <td class="admin-show-image"><%= attachment_image_tag @post, :image, format:"jpeg", size:"200x200" %></td>
-       <% end %>
+  <thead>
+    <tr>
+      <th class="admin-show-title">タイトル</th>
+    </tr>
+    <tr>
+      <th class="admin-show-title"><%= @post.title %></th>
+    </tr>
+    <tr>
+      <th class="admin-show-body1">内容</th>
+    </tr>
+    <tr>
+      <th class="admin-show-body2"><%= @post.body %></th>
+    </tr>
+    <tr>
+      <% if @post.image.present? %>
+        <th class="admin-show-image">イメージ</th>
+      <% end %>
+    </tr>
+    <tr>
+      <% if @post.image.present? %>
+        <th class="admin-show-image"><%= attachment_image_tag @post, :image, format:"jpeg", size:"200x200" %></th>
+      <% end %>
+    </tr>
+    <tr>
+      <% if @post.tag_list.present? %>
+        <th class="admin-show-tag">タグ</th>
+      <% end %>
+    </tr>
+    <tr>
+      <% if @post.tag_list.present? %>
+        <td class="admin-show-tag"><%= @post.tag_list %></td>
+      <% end %>
+    </tr>
+  </thead>
+</table>
 
-       <% if @post.tag_list.present? %>
-          <td class="admin-show-tag"><%= @post.tag_list %></td>
-        <% end %>
-     </tr>
-     <tr>
-       <td class="admin-show-favorite-count">わがまま！数<%= @post.favorites.count %></td>
-     </tr>
-   </tbody>
+<table class="admin-show-favorite-count">
+  <thead>
+    <tr>
+      <th>わがまま！数<%= @post.favorites.count %></th>
+    </tr>
+  </thead>
 </table>
 
 <div class="admin-show-destroy">
