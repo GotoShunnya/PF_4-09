@@ -1,3 +1,3 @@
 <% flash.each do |key, value| %> <!--devise導入時にflashオブジェクト使用で、deviseに関する通知でkeyとvalueを生成。notice/alertのkeyとvalueをeachで回す。-->
   <%= content_tag(:div, value, class: "flash flash_#{key}") %> <!--content_tagはhtmlタグを生成できる。第一引数にタグ、第二引数に内容、第三引数にオプションも設定できる。-->
-<%end%><!--上ではdivタグにvalueを表示させ、scssを適用させるためclassでflashとflash_#{key}を指定-->
+<% end %><!--上ではdivタグにvalueを表示させ、scssを適用させるためclassでflashとflash_#{key}を指定-->

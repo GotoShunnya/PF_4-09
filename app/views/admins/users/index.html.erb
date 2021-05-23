@@ -1,7 +1,7 @@
 <h1 class="index-heading">ユーザ一覧</h1>
 <table class="admin-index-table">
   <thead>
-    <tr class="admin-table-border">
+    <tr>
       <th class="admin-name">ユーザ名</th>
       <th class="admin-profile_image">プロフィール画像</th>
       <th class="admin-post-count">投稿件数</th>
@@ -12,7 +12,8 @@
         <td class="admin-name"><%= link_to user.name, admins_user_path(user) %></td>
         <td class="admin-profile_image"><%= attachment_image_tag user, :profile_image, format:"jpeg", fallback:"no_image.jpg", size:"70x70" %></td>
         <td class="admin-post-count"><%= user.posts.count %></td>
-        <td class="admin-status"><%= user.user_status %></td>
+        <%= render "admins/users/user_status", user: user %>
+
       </tr>
     <% end %>
   </thead>
