@@ -3,9 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //admin-log_in/
+.admin-background-image {
+  background-image: image-url("macbook1697_TP_V.jpg");
+  background-position: center;
+  background-size: cover;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
 .log-in-heading {
   margin-left: 22%;
   padding: 40px;
+  color: #FFEEFF;
 }
 
 .admin-log-in-background-color {
@@ -17,19 +27,19 @@
 .name-field {
   margin-left: 31%;
   padding: 30px;
-  color: #FFBEDA;
+  color: #FFFFBB;
 }
 
 .password-field {
   margin-left: 31%;
   padding: 30px 30px 10px 30px;
-  color: #FFBEDA;
+  color: #FFFFBB;
 }
 
 .remember-me-field {
   margin-left: 30%;
   padding: 40px 40px 10px 40px;
-  color: #FFBEDA;
+  color: #FFFFBB;
 }
 
 .log-in-button {
@@ -54,10 +64,6 @@
   width: 80%;
 }
 
-.admin-table-border {
-
-}
-
 .admin-name {
   padding: 20px;
   border-bottom: 1px solid;
@@ -71,8 +77,19 @@
   @extend .admin-name;
 }
 
-.admin-status{
+.admin-status {
   @extend .admin-name;
+}
+
+.user_status{ //content_tagで生成したclassに条件に応じて効果を指定/
+  @extend .admin-name;
+  border-color: black;
+  &_有効 {
+    color: green;
+  }
+  &_退会済み {
+    color: red;
+  }
 }
 
 .admin-table-padding {
